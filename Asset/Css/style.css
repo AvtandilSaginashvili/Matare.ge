@@ -1,0 +1,95 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+
+@font-face {
+    font-family: mtavruli;
+    src: url(../fonts/bpg-nino-mtavruli-webfont.ttf);
+}
+
+@font-face {
+    font-family: volkhov;
+    src: url(../fonts/Volkhov-Bold.ttf);
+}
+
+
+
+
+
+/* Header */
+
+
+.upHeader {
+    height: 42px;
+}
+
+.tbilisi {
+    font-family: mtavruli;
+    font-weight: 700;
+    font-style: italic;
+    font-size: 24px;
+    color: #fff;
+    margin: 0;
+}
+
+.time {
+    font-family: mtavruli;
+    font-weight: 700;
+    font-style: italic;
+    font-size: 24px;
+    color: #fff;
+    margin: 0;
+}
+
+.links {
+    font-family: mtavruli;
+    font-weight: 400 !important;
+    font-style: italic;
+    font-size: 20px !important;
+    color: #000 !important;
+}
+
+.dropLink {
+    font-family: mtavruli;
+    font-weight: 400 !important;
+    font-style: italic;
+    font-size: 20px !important;
+    color: #000 !important;
+    padding: 0 !important;
+    padding-right: 5px !important;
+    margin: 0 !important;
+}
+
+.dropLink:hover {
+    background-color: #F2C35E !important;
+}
+
+.downMenu {
+    border-radius: 0 !important;
+    border: none !important;
+    background-color: #F2C35E !important;
+    padding: 0 !important;
+    padding-top: 4px !important;
+    top: 32px !important;
+}
+
+.telNum {
+    margin: 0;
+    font-family: volkhov;
+    font-size: 20px;
+    background-color: #FFC33E;
+    border-radius: 10px;
+    color: #fff;
+    padding: 3px;
+}
+
+.hrLink {
+    margin: 0;
+    margin-bottom: 2px;
+}
