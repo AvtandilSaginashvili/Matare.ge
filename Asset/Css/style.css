@@ -47,12 +47,20 @@ body {
     margin: 0;
 }
 
+.navigation {
+    background-color: #fff;
+    box-shadow: 0px 0px 8px 0px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 0px 0px 8px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 8px 0px rgba(0,0,0,0.75);
+}
+
 .links {
     font-family: mtavruli;
     font-weight: 400 !important;
     font-style: italic;
     font-size: 20px !important;
     color: #000 !important;
+    transition: 0.5s !important;
 }
 
 .dropLink {
@@ -77,6 +85,7 @@ body {
     padding: 0 !important;
     padding-top: 4px !important;
     top: 32px !important;
+    left: 20px !important;
 }
 
 .telNum {
@@ -92,4 +101,135 @@ body {
 .hrLink {
     margin: 0;
     margin-bottom: 2px;
+}
+
+.traingleHover {
+    transition: 0.5s;
+}
+
+.linksHov {
+    transition: 0.5s;
+}
+
+.linksHov:focus .traingleHover {
+    transform: rotate(90deg);
+}
+
+
+
+/* Hero Section */
+
+
+
+.homeBack {
+    background-image: url(../img/homeBackground.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 20px;
+    margin-top: 8px;
+}
+
+.formBox {
+    background-color: #fff;
+    border-radius: 20px;
+    padding: 21px 17px 31px 19px;
+}
+
+.radioLabel {
+    position: relative;
+    cursor: pointer;
+    font-family: mtavruli;
+    color: #FFC33E;
+    font-style: italic;
+    font-size: 16px;
+    font-weight: 400;
+}
+  
+.radio-custom {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    background-color: transparent;
+    border-radius: 50%;
+    border: 2px solid #FFC33E;
+}
+  
+input[type="radio"] {
+    visibility: hidden;
+}
+  
+input[type="radio"]:checked + .radio-custom::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #FFC33E;
+  }
+  
+
+  .formDestination label{
+    color: #666666;
+    font-family: mtavruli;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 22px;
+
+  }
+
+  .chooseCity {
+    appearance: none;
+   -webkit-appearance: none;
+   -moz-appearance: none; 
+    height: 50px;
+    width: 100%;
+    background-color: transparent;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    box-shadow: 0px 0px 10px 0px rgba(255,195,62,0.75);
+    -webkit-box-shadow: 0px 0px 10px 0px rgba(255,195,62,0.75);
+    -moz-box-shadow: 0px 0px 10px 0px rgba(255,195,62,0.75);
+    padding-left: 8px;
+    font-family: mtavruli;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 14px;
+    color: #828181;
+    cursor: pointer;
+}
+
+.chooseCity option {
+    background-color: #FFC33E;
+    color: #000;
+    font-family: mtavruli;
+    font-weight: 400;
+    font-style: italic;
+    font-size: 20px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    border-radius: 20px;
+    padding: 15px;
+}
+
+.chooseCity option:checked {
+    display: none;
+}
+
+.chooseCity option:hover {
+    border: 2px solid #3EFF464D;
+}
+
+.disabledOption {
+    font-family: mtavruli;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 14px;
+    color: #828181;
 }
