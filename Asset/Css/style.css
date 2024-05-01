@@ -18,6 +18,11 @@ body {
     src: url(../fonts/Volkhov-Bold.ttf);
 }
 
+@font-face {
+    font-family: Bree Serif;
+    src: url(../fonts/BreeSerif-Regular.ttf);
+}
+
 
 
 
@@ -233,3 +238,209 @@ input[type="radio"]:checked + .radio-custom::after {
     font-size: 14px;
     color: #828181;
 }
+
+ 
+
+
+
+
+/* რატომ MATARE.ge */
+
+
+.whyMatare {
+    font-family: mtavruli;
+    font-weight: 700;
+    font-size: 60px;
+    font-style: italic;
+    color: #181E4B;
+    text-align: center;
+}
+
+.whyMatare span {
+    font-family: Bree Serif;
+    font-size: 72px;
+    font-style: normal;
+    font-weight: 400;
+}
+
+.cards {
+    height: 310px !important;
+    border-radius: 10px;
+    background-color: #F9F9F9;
+    padding: 15px;
+    box-shadow: 0px 6px 12px 0px rgba(191,191,191,0.75);
+    -webkit-box-shadow: 0px 6px 12px 0px rgba(191,191,191,0.75);
+    -moz-box-shadow: 0px 6px 12px 0px rgba(191,191,191,0.75);
+    transition: 0.5s;
+}
+
+.cards:hover {
+    box-shadow: 0px 0px 14px 0px rgba(230,161,78,0.75);
+    -webkit-box-shadow: 0px 0px 14px 0px rgba(230,161,78,0.75);
+    -moz-box-shadow: 0px 0px 14px 0px rgba(230,161,78,0.75);
+}
+
+.cardHeader {
+    font-family: mtavruli;
+    font-weight: bold;
+    font-style: italic;
+    font-size: 16.4px;
+    color: #1E1D4C;
+    margin: 0;
+    align-items: center;
+}
+
+.cardParagraph {
+    margin: 0;
+    font-family: mtavruli;
+    font-weight: 400;
+    font-style: italic;
+    font-size: 14px;
+    text-align: center;
+    line-height: 20px;
+    margin-top: 3px;
+}
+
+
+
+/* ჩვენ გთავაზობთ განყოფილება */
+
+
+.offerContainer {
+    padding-left: 7% !important;
+    padding-right: 7% !important;
+}
+
+.offerHead {
+    font-family: mtavruli;
+    font-weight: 400;
+    font-style: italic;
+    font-size: 54px;
+    margin: 0;
+    color: #000;
+}
+
+.offerImg {
+    max-width: 80px !important;
+    height: 100px !important;
+    margin-right: 36px;
+}
+
+.offerHeadsecond {
+    font-family: mtavruli;
+    font-style: italic;
+    font-weight: 700;
+    font-size: 26px;
+    margin: 0;
+    color: #000;
+}
+
+.offerParagraph {
+    font-family: mtavruli;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 20px;
+    margin: 0;
+    color: #000;
+    margin-top: 6px;
+}
+
+.offerCards {
+    border-radius: 20px;
+    background-color: #fff;
+    height: 100% !important;
+    box-shadow: 0px 7px 14px 0px rgba(192,192,192,0.75);
+    -webkit-box-shadow: 0px 7px 14px 0px rgba(192,192,192,0.75);
+    -moz-box-shadow: 0px 7px 14px 0px rgba(192,192,192,0.75);
+    padding: 35px;
+    transition: 0.5s ease-out;
+}
+
+.offerCards:hover {
+    transform: scale(1.2);
+    cursor: pointer;
+    box-shadow: 0px 0px 8px 0px rgba(246,197,89,1);
+    -webkit-box-shadow: 0px 0px 8px 0px rgba(246,197,89,1);
+    -moz-box-shadow: 0px 0px 8px 0px rgba(246,197,89,1);
+    position: relative;
+    z-index: 500 !important;
+}
+
+.offerBlogHead {
+    font-family: mtavruli;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 16px;
+    color: #000;
+    text-align: center;
+}
+
+.offerBlogImg {
+    width: 100%;
+    text-align: center;
+}
+
+.offerBlogHeadSecond {
+    font-family: mtavruli;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 13px;
+    color: #000;
+    text-align: center;
+    margin-top: 33px;
+}
+
+.offerBlogParagraph {
+    font-family: mtavruli;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 11px;
+    color: #000;
+    margin: 0;
+    margin-top: 22px;
+}
+
+.offerBlogBtn {
+    width: 100px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+    background-color: #FFC33E;
+    color: #fff;
+    font-family: mtavruli;
+    font-weight: 400;
+    font-style: italic;
+    font-size: 13px;
+    text-decoration: none;
+    margin-top: 29px;
+}
+
+.offerCardLink {
+    text-decoration: none !important;
+}
+
+.swiper {
+    width: 100%;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.swiper-slide {
+    background-position: center;
+    background-size: cover;
+    width: 300px;
+    height: 300px;
+    border-radius: 20px !important;
+}
+
+.swiper-slide img {
+    display: block;
+    width: 100%;
+    border-radius: 20px !important;
+}
+
+.swiper-slide {
+    transition: transform 0.3s; /* Add a smooth transition */
+  }
