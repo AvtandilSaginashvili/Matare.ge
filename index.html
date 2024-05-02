@@ -5,13 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="./Asset/Css/style.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./Asset/Bootstrap/dist/css/bootstrap.min.css">
+    <script src="./Asset/Bootstrap/dist/js/bootstrap.bundle.min.js"></script>
       <!-- Link Swiper's CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <!-- Swiper JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
 </head>
 <body>
 
@@ -355,7 +357,35 @@
                     <br>
                     <label>გამგზავრება</label>
                     <br>
-                    <input type="date" placeholder="გთხოვთ აირჩიოთ თარიღი">
+                    <div class="w-100 position-relative">
+                    <button id="toggleButton" class="chooseDate" type="button">გთხოვთ აირჩიოთ თარიღი <img src="./Asset/img/Calendar Plus.jpg" alt="calendar"></button>
+                    <div class="calendar">
+                      <!-- Nav -->
+                      <header>
+                        <nav class="w-100 ps-3 pe-3 d-flex justify-content-between">
+                          <button id="prev"></button>
+                          <h3></h3>
+                          <button id="next"></button>
+                          </nav>
+                      </header>
+                      <!-- End Nav -->
+              
+                      <!-- Body -->
+                      <section>
+                          <ul class="days">
+                              <li>ორშ</li>
+                              <li>სამ</li>
+                              <li>ოთხ</li>
+                              <li>ხუთ</li>
+                              <li>პარ</li>
+                              <li>შაბ</li>
+                              <li>კვი</li>
+                          </ul>
+                          <ul class="dates"></ul>
+                      </section>
+                       <!-- End Body -->
+                    </div>
+                    </div>
                     <br>
                     <label>დაბრუნება</label>
                     <br>
@@ -365,6 +395,20 @@
                     
 
                   </form>
+
+                </div>
+
+              </div>
+
+              <div class="col-7" style="height: 583px;">
+
+                <div class="w-100 pb-5 d-flex align-items-end" style="height: 535px;">
+
+                  <div class="w-100 blueLine">
+
+                    <div class="orangeLine"><img class="plane" src="./Asset/img/airplane.png" alt="airplane"></div>
+                    
+                  </div>
 
                 </div>
 
@@ -1114,6 +1158,8 @@
 
     </div>
 
+    <!--Slider-->
+
     <div class="container-fluid mt-5">
 
       <div class="row pb-5">
@@ -1123,31 +1169,35 @@
           <div class="w-100">
 
             <!-- Swiper -->
-            <div class="swiper mySwiper">
+            <div class="swiper mySwiper position-relative">
               <div class="swiper-wrapper">
                 <div class="swiper-slide">
-                  <img src="./Asset/img/საფრანგეთი.jpg" />
+                  <img src="./Asset/img/france.jpg" />
                 </div>
                 <div class="swiper-slide">
                   <img src="./Asset/img/egypt.jpg" />
                 </div>
                 <div class="swiper-slide">
-                  <img src="./Asset/img/საფრანგეთი.jpg" />
+                  <img src="./Asset/img/greece.jpg" />
                 </div>
                 <div class="swiper-slide">
-                  <img src="./Asset/img/საფრანგეთი.jpg" />
+                  <img src="./Asset/img/italy.jpg" />
                 </div>
                 <div class="swiper-slide">
-                  <img src="./Asset/img/საფრანგეთი.jpg" />
+                  <img src="./Asset/img/cyprus.jpg" />
                 </div>
                 <div class="swiper-slide">
-                  <img src="./Asset/img/საფრანგეთი.jpg" />
+                  <img src="./Asset/img/india.jpg" />
+                </div>
+                <div class="swiper-slide">
+                  <img src="./Asset/img/turkey.jpg" />
                 </div>
                 
               </div>
 
-              <div class="swiper-button-next"></div>
-              <div class="swiper-button-prev"></div>
+              <div class="custom-swiper-button-prev"></div>
+              <div class="custom-swiper-button-next"></div>
+                
 
             </div>
 
@@ -1158,6 +1208,731 @@
       </div>
 
     </div>
+
+    <!--სერვისების სექცია-->
+
+    <div class="w-100 mt-5" style="background-color: #F3F3F3;">
+
+      <div class="container mt-5 pt-5">
+
+        <div class="row">
+  
+          <div class="col-12">
+  
+            <div class="w-100">
+  
+              <h2 class="serviceHead">სერვისები</h2>
+  
+            </div>
+  
+          </div>
+  
+        </div>
+  
+        <div class="row justify-content-around pb-5">
+  
+          <div class="col-2 p-0">
+  
+            <div class="w-100 serviceCard">
+  
+              <div class="w-100 servCardHeadBox"><h6>ავიაბილეთები განვადებით</h6></div>
+
+              <img class="w-100 serviceHoverImg" src="./Asset/img/serviceimg.jpg" alt="img">
+
+              <div class="w-100 serviceBoxHover position-relative">
+
+                <div class="iconBox"><img class="w-100 iconImg" src="./Asset/img/Loan.jpg" alt="LoanIcon"></div>
+
+                <p class="serviceParagraph position-relative">ავიაბილეთები განვადებით
+                  <p class="serviceParagraph2 position-absolute">შეიძინეთ ავიაბილეთები განვადებით სწრაფად და მარტივად</p>
+                </p>
+
+              </div>
+  
+            </div>
+  
+          </div>
+
+          <div class="col-2 p-0">
+  
+            <div class="w-100 serviceCard">
+  
+              <div class="w-100 servCardHeadBox"><h6>სამოგზაურო დაზღვევა</h6></div>
+
+              <img class="w-100 serviceHoverImg" src="./Asset/img/serviceimg2.jpg" alt="img">
+
+              <div class="w-100 serviceBoxHover position-relative">
+
+                <div class="iconBox"><img class="w-100 iconImg" src="./Asset/img/serviceIcon.jpg" alt="LoanIcon"></div>
+
+                <p class="serviceParagraph position-relative">სამოგზაურო დაზღვევა 1 ლარიდან
+                  <p class="serviceParagraph2 position-absolute">სამოგზაურო დაზღვევა 1 ლარიდან</p>
+                </p>
+
+              </div>
+  
+            </div>
+  
+          </div>
+          
+          <div class="col-2 p-0">
+  
+            <div class="w-100 serviceCard">
+  
+              <div class="w-100 servCardHeadBox"><h6>ავიაბილეთები განვადებით</h6></div>
+
+              <img class="w-100 serviceHoverImg" src="./Asset/img/serviceimg.jpg" alt="img">
+
+              <div class="w-100 serviceBoxHover position-relative">
+
+                <div class="iconBox"><img class="w-100 iconImg" src="./Asset/img/Loan.jpg" alt="LoanIcon"></div>
+
+                <p class="serviceParagraph position-relative">ავიაბილეთები განვადებით
+                  <p class="serviceParagraph2 position-absolute">შეიძინეთ ავიაბილეთები განვადებით სწრაფად და მარტივად</p>
+                </p>
+
+              </div>
+  
+            </div>
+  
+          </div>
+
+          <div class="col-2 p-0">
+  
+            <div class="w-100 serviceCard">
+  
+              <div class="w-100 servCardHeadBox"><h6>ბარგიანი ბილეთები</h6></div>
+
+              <img class="w-100 serviceHoverImg" src="./Asset/img/serviceimg3.png" alt="img">
+
+              <div class="w-100 serviceBoxHover position-relative">
+
+                <div class="iconBox"><img class="w-100 iconImg" src="./Asset/img/serviceIcon2.jpg" alt="LoanIcon"></div>
+
+                <p class="serviceParagraph position-relative">ბარგიანი ბილეთები
+                  <p class="serviceParagraph2 position-absolute">შეიძინეთ ბარგიანი ბილეთები ყველაზე დაბალ ფასად</p>
+                </p>
+
+              </div>
+  
+            </div>
+  
+          </div>
+
+          <div class="col-2 p-0">
+  
+            <div class="w-100 serviceCard">
+  
+              <div class="w-100 servCardHeadBox"><h6>სასაჩუქრე ვაუჩერი</h6></div>
+
+              <img class="w-100 serviceHoverImg" src="./Asset/img/serviceimg4.png" alt="img">
+
+              <div class="w-100 serviceBoxHover position-relative">
+
+                <div class="iconBox"><img class="w-100 iconImg" src="./Asset/img/serviceIcon3.jpg" alt="LoanIcon"></div>
+
+                <p class="serviceParagraph position-relative">სასაჩუქრე ვაუჩერი
+                  <p class="serviceParagraph2 position-absolute">აჩუქე ვაუჩერი საყვარელ ადამიანს</p>
+                </p>
+
+              </div>
+  
+            </div>
+  
+          </div>
+  
+        </div>
+  
+      </div>
+
+    </div>
+
+    <!--Blog სექცია-->
+
+    <div class="container mt-5 pt-5">
+
+      <div class="row">
+
+        <div class="col-12">
+
+          <div class="w-100">
+
+            <h3 class="blogHead">ბლოგი</h3>
+
+          </div>
+
+        </div>
+
+        <div class="col-12">
+
+          <div class="w-100">
+
+            <p class="blogParagraph">Lorem ipsum dolor sit amet consectetur. Accumsan vitae tincidunt ultrices adipiscing in sed vitae et ac. Duis congue sit quam egestas sagittis blandit neque facilisi. Turpis ligula ultricies ante dictum </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="row pb-5">
+
+        <div class="col-6">
+
+          <div class="w-100">
+
+            <div class="blogImgBox"></div>
+
+            <div class="w-100 d-flex justify-content-between">
+              <h6 class="blogHeadleft">Lorem ipsum dolor sit amet<br> consectetur. Accumsan</h6>
+              <p class="blogDate">JUN 5 2006</p>
+            </div>
+
+            <p class="blogParagraphInside">Lorem ipsum dolor sit amet consectetur. Accumsan vitae tincidunt ultrices adipiscing in sed vitae et ac. Duis congue sit</p>
+
+          </div>
+
+        </div>
+
+        <div class="col-6">
+
+          <div class="w-100">
+
+            <div class="w-100 d-flex justify-content-between">
+
+              <div>
+                <h6 class="blogHeadRight mb-4">Lorem ipsum dolor sit amet<br> consectetur </h6>
+                <p class="blogParagraphInside">Lorem ipsum dolor sit amet<br> consectetur. Accumsan vitae tincidunt </p>
+                <p class="blogDateright">JUN 5 2006</p>
+              </div>
+
+              <div class="blogImgBoxes"></div>
+
+            </div>
+
+            <div class="w-100 mt-4 d-flex justify-content-between">
+
+              <div>
+                <h6 class="blogHeadRight mb-4">Lorem ipsum dolor sit amet<br> consectetur </h6>
+                <p class="blogParagraphInside">Lorem ipsum dolor sit amet<br> consectetur. Accumsan vitae tincidunt </p>
+                <p class="blogDateright">JUN 5 2006</p>
+              </div>
+
+              <div class="blogImgBoxes"></div>
+
+            </div>
+
+            <div class="w-100 mt-4 d-flex justify-content-between">
+
+              <div>
+                <h6 class="blogHeadRight mb-4">Lorem ipsum dolor sit amet<br> consectetur </h6>
+                <p class="blogParagraphInside">Lorem ipsum dolor sit amet<br> consectetur. Accumsan vitae tincidunt </p>
+                <p class="blogDateright">JUN 5 2006</p>
+              </div>
+
+              <div class="blogImgBoxes"></div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!--Rating სექცია-->
+
+    <div class="w-100 mt-5 pt-5" style="background-color: #F3F3F3;">
+
+      <div class="container-fluid mt-5">
+
+        <div class="row">
+
+          <div class="col-9">
+
+            <div class="w-100">
+
+              <h3 class="ratingHead">Lorem ipsum dolor sit amet consectetur. Suspendisse.</h3>
+
+            </div>
+
+          </div>
+
+          <div class="col-3">
+
+            <div class="w-100">
+
+              <div class="w-100 d-flex justify-content-center position-relative">
+                <button class="carousel-control-prev" style="left: 100px; top: 40px;" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                  <span class="" aria-hidden="true">
+                    <img src="./Asset/img/arrowL.jpg">
+                    </span>
+                </button>
+                <button class="carousel-control-next" style="right: 110px; top: 40px;" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                  <span class="" aria-hidden="true">
+                    <img src="./Asset/img/arrowR.jpg" alt="">
+                  </span>
+                </button>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="row pb-5 mt-5">
+  
+          <div class="col-12">
+
+            <div class="w-100">
+
+              <div id="carouselExample" class="carousel slide">
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <div class="row">
+
+                      <div class="col-4">
+
+                        <div class="w-100 p-4 pt-5 pb-5 ratingBox">
+
+                          <p class="ratingParagraph">Lorem ipsum dolor sit amet consectetur. Adipiscing feugiat consectetur erat rhoncus in. Nisl duis at tempor aliquet a ultrices mattis elit aenean. Duis vitae pulvinar quam magna nam ante sed. Consectetur eget nunc accumsan libero.
+                          </p>
+
+                          <div class="w-100 d-flex align-items-center mt-5">
+                            <img src="./Asset/img/ratingIcon.jpg" alt="">
+                            <div class="ps-3">
+                              <h6 class="blogHeadInside">LOREM IPSUM</h6>
+                              <p class="blogParagraphInside">LOREM IPSUM</p>
+                            </div>
+                              
+                          </div>
+
+                          <div class="d-flex mt-5">
+                            <a href="#"><img src="./Asset/img/RatingStar.jpg" alt=""></a>
+                            <a href="#"><img src="./Asset/img/RatingStar.jpg" alt=""></a>
+                            <a href="#"><img src="./Asset/img/RatingStar.jpg" alt=""></a>
+                            <a href="#"><img src="./Asset/img/RatingStar.jpg" alt=""></a>
+                            <a href="#"><img src="./Asset/img/RatingStar.jpg" alt=""></a>
+                          </div>
+
+                        </div>
+
+                      </div>
+                      <div class="col-4">
+
+                        <div class="w-100 p-4 pt-5 pb-5 ratingBox">
+
+                          <p class="ratingParagraph">Lorem ipsum dolor sit amet consectetur. Adipiscing feugiat consectetur erat rhoncus in. Nisl duis at tempor aliquet a ultrices mattis elit aenean. Duis vitae pulvinar quam magna nam ante sed. Consectetur eget nunc accumsan libero.
+                          </p>
+
+                          <div class="w-100 d-flex align-items-center mt-5">
+                            <img src="./Asset/img/ratingIcon.jpg" alt="">
+                            <div class="ps-3">
+                              <h6 class="blogHeadInside">LOREM IPSUM</h6>
+                              <p class="blogParagraphInside">LOREM IPSUM</p>
+                            </div>
+                              
+                          </div>
+
+                          <div class="d-flex mt-5">                                                                                 
+                            <a href="#"><img src="./Asset/img/RatingStar.jpg" alt=""></a>
+                            <a href="#"><img src="./Asset/img/RatingStar.jpg" alt=""></a>
+                            <a href="#"><img src="./Asset/img/RatingStar.jpg" alt=""></a>
+                            <a href="#"><img src="./Asset/img/RatingStar.jpg" alt=""></a>
+                            <a href="#"><img src="./Asset/img/RatingStar.jpg" alt=""></a>
+                          </div>
+
+                        </div>
+
+                      </div>
+                      <div class="col-4">
+
+                        <div class="w-100 p-4 pt-5 pb-5 ratingBox">
+
+                          <p class="ratingParagraph">Lorem ipsum dolor sit amet consectetur. Adipiscing feugiat consectetur erat rhoncus in. Nisl duis at tempor aliquet a ultrices mattis elit aenean. Duis vitae pulvinar quam magna nam ante sed. Consectetur eget nunc accumsan libero.
+                          </p>
+
+                          <div class="w-100 d-flex align-items-center mt-5">
+                            <img src="./Asset/img/ratingIcon.jpg" alt="">
+                            <div class="ps-3">
+                              <h6 class="blogHeadInside">LOREM IPSUM</h6>
+                              <p class="blogParagraphInside">LOREM IPSUM</p>
+                            </div>
+                              
+                          </div>
+
+                          <div class="d-flex mt-5">
+                            <a href="#"><img src="./Asset/img/RatingStar.jpg" alt=""></a>
+                            <a href="#"><img src="./Asset/img/RatingStar.jpg" alt=""></a>
+                            <a href="#"><img src="./Asset/img/RatingStar.jpg" alt=""></a>
+                            <a href="#"><img src="./Asset/img/RatingStar.jpg" alt=""></a>
+                            <a href="#"><img src="./Asset/img/RatingStar.jpg" alt=""></a>
+                          </div>
+
+                        </div>
+
+                      </div>
+
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <div class="row">
+
+                      <div class="col-4">
+
+                        <div class="w-100 p-4 pt-5 pb-5 ratingBox">
+
+                          <p class="ratingParagraph">Lorem ipsum dolor sit amet consectetur. Adipiscing feugiat consectetur erat rhoncus in. Nisl duis at tempor aliquet a ultrices mattis elit aenean. Duis vitae pulvinar quam magna nam ante sed. Consectetur eget nunc accumsan libero.
+                          </p>
+
+                          <div class="w-100 d-flex align-items-center mt-5">
+                            <img src="./Asset/img/ratingIcon.jpg" alt="">
+                            <div class="ps-3">
+                              <h6 class="blogHeadInside">LOREM IPSUM</h6>
+                              <p class="blogParagraphInside">LOREM IPSUM</p>
+                            </div>
+                              
+                          </div>
+
+                          <div class="d-flex mt-5">                                                                                 
+                            <a href="#"><img src="./Asset/img/RatingStar.jpg" alt=""></a>
+                            <a href="#"><img src="./Asset/img/RatingStar.jpg" alt=""></a>
+                            <a href="#"><img src="./Asset/img/RatingStar.jpg" alt=""></a>
+                            <a href="#"><img src="./Asset/img/RatingStar.jpg" alt=""></a>
+                            <a href="#"><img src="./Asset/img/RatingStar.jpg" alt=""></a>
+                          </div>
+
+                        </div>
+
+                      </div>
+                      <div class="col-4">
+
+                        <div class="w-100 p-4 pt-5 pb-5 ratingBox">
+
+                          <p class="ratingParagraph">Lorem ipsum dolor sit amet consectetur. Adipiscing feugiat consectetur erat rhoncus in. Nisl duis at tempor aliquet a ultrices mattis elit aenean. Duis vitae pulvinar quam magna nam ante sed. Consectetur eget nunc accumsan libero.
+                          </p>
+
+                          <div class="w-100 d-flex align-items-center mt-5">
+                            <img src="./Asset/img/ratingIcon.jpg" alt="">
+                            <div class="ps-3">
+                              <h6 class="blogHeadInside">LOREM IPSUM</h6>
+                              <p class="blogParagraphInside">LOREM IPSUM</p>
+                            </div>
+                              
+                          </div>
+
+                          <div class="d-flex mt-5">                                                                                 
+                            <a href="#"><img src="./Asset/img/RatingStar.jpg" alt=""></a>
+                            <a href="#"><img src="./Asset/img/RatingStar.jpg" alt=""></a>
+                            <a href="#"><img src="./Asset/img/RatingStar.jpg" alt=""></a>
+                            <a href="#"><img src="./Asset/img/RatingStar.jpg" alt=""></a>
+                            <a href="#"><img src="./Asset/img/RatingStar.jpg" alt=""></a>
+                          </div>
+
+                        </div>
+
+                      </div>
+                      <div class="col-4">
+
+                        <div class="w-100 p-4 pt-5 pb-5 ratingBox">
+
+                          <p class="ratingParagraph">Lorem ipsum dolor sit amet consectetur. Adipiscing feugiat consectetur erat rhoncus in. Nisl duis at tempor aliquet a ultrices mattis elit aenean. Duis vitae pulvinar quam magna nam ante sed. Consectetur eget nunc accumsan libero.
+                          </p>
+
+                          <div class="w-100 d-flex align-items-center mt-5">
+                            <img src="./Asset/img/ratingIcon.jpg" alt="">
+                            <div class="ps-3">
+                              <h6 class="blogHeadInside">LOREM IPSUM</h6>
+                              <p class="blogParagraphInside">LOREM IPSUM</p>
+                            </div>
+                              
+                          </div>
+
+                          <div class="d-flex mt-5">                                                                                 
+                            <a href="#"><img src="./Asset/img/RatingStar.jpg" alt=""></a>
+                            <a href="#"><img src="./Asset/img/RatingStar.jpg" alt=""></a>
+                            <a href="#"><img src="./Asset/img/RatingStar.jpg" alt=""></a>
+                            <a href="#"><img src="./Asset/img/RatingStar.jpg" alt=""></a>
+                            <a href="#"><img src="./Asset/img/RatingStar.jpg" alt=""></a>
+                          </div>
+
+                        </div>
+
+                      </div>
+
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <div class="row">
+
+                      <div class="col-4">
+
+                        <div class="w-100 p-4 pt-5 pb-5 ratingBox">
+
+                          <p class="ratingParagraph">Lorem ipsum dolor sit amet consectetur. Adipiscing feugiat consectetur erat rhoncus in. Nisl duis at tempor aliquet a ultrices mattis elit aenean. Duis vitae pulvinar quam magna nam ante sed. Consectetur eget nunc accumsan libero.
+                          </p>
+
+                          <div class="w-100 d-flex align-items-center mt-5">
+                            <img src="./Asset/img/ratingIcon.jpg" alt="">
+                            <div class="ps-3">
+                              <h6 class="blogHeadInside">LOREM IPSUM</h6>
+                              <p class="blogParagraphInside">LOREM IPSUM</p>
+                            </div>
+                              
+                          </div>
+
+                          <div class="d-flex mt-5">
+                            <a href="#"><img src="./Asset/img/RatingStar.jpg" alt=""></a>
+                            <a href="#"><img src="./Asset/img/RatingStar.jpg" alt=""></a>
+                            <a href="#"><img src="./Asset/img/RatingStar.jpg" alt=""></a>
+                            <a href="#"><img src="./Asset/img/RatingStar.jpg" alt=""></a>
+                            <a href="#"><img src="./Asset/img/RatingStar.jpg" alt=""></a>
+                          </div>
+
+                        </div>
+
+                      </div>
+                      <div class="col-4">
+
+                        <div class="w-100 p-4 pt-5 pb-5 ratingBox">
+
+                          <p class="ratingParagraph">Lorem ipsum dolor sit amet consectetur. Adipiscing feugiat consectetur erat rhoncus in. Nisl duis at tempor aliquet a ultrices mattis elit aenean. Duis vitae pulvinar quam magna nam ante sed. Consectetur eget nunc accumsan libero.
+                          </p>
+
+                          <div class="w-100 d-flex align-items-center mt-5">
+                            <img src="./Asset/img/ratingIcon.jpg" alt="">
+                            <div class="ps-3">
+                              <h6 class="blogHeadInside">LOREM IPSUM</h6>
+                              <p class="blogParagraphInside">LOREM IPSUM</p>
+                            </div>
+                              
+                          </div>
+
+                          <div class="d-flex mt-5">
+                            <a href="#"><img src="./Asset/img/RatingStar.jpg" alt=""></a>
+                            <a href="#"><img src="./Asset/img/RatingStar.jpg" alt=""></a>
+                            <a href="#"><img src="./Asset/img/RatingStar.jpg" alt=""></a>
+                            <a href="#"><img src="./Asset/img/RatingStar.jpg" alt=""></a>
+                            <a href="#"><img src="./Asset/img/RatingStar.jpg" alt=""></a>
+                          </div>
+
+                        </div>
+
+                      </div>
+                      <div class="col-4">
+
+                        <div class="w-100 p-4 pt-5 pb-5 ratingBox">
+
+                          <p class="ratingParagraph">Lorem ipsum dolor sit amet consectetur. Adipiscing feugiat consectetur erat rhoncus in. Nisl duis at tempor aliquet a ultrices mattis elit aenean. Duis vitae pulvinar quam magna nam ante sed. Consectetur eget nunc accumsan libero.
+                          </p>
+
+                          <div class="w-100 d-flex align-items-center mt-5">
+
+
+                            <div class="ps-3">
+                              <h6 class="blogHeadInside">LOREM IPSUM</h6>
+                              <p class="blogParagraphInside">LOREM IPSUM</p>
+                            </div>
+                              
+                          </div>
+
+                          <div class="d-flex mt-5">
+                            <a href="#"><img src="./Asset/img/RatingStar.jpg" alt=""></a>
+                            <a href="#"><img src="./Asset/img/RatingStar.jpg" alt=""></a>
+                            <a href="#"><img src="./Asset/img/RatingStar.jpg" alt=""></a>
+                            <a href="#"><img src="./Asset/img/RatingStar.jpg" alt=""></a>
+                            <a href="#"><img src="./Asset/img/RatingStar.jpg" alt=""></a>
+                          </div>
+
+                        </div>
+
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+                
+              </div>
+
+            </div>
+
+          </div>
+  
+        </div>
+  
+      </div>
+
+    </div>
+
+
+    <footer class="mt-5 pt-5 backgourndImg">
+
+      <div class="w-100 pt-4" style="border-top: 1px solid #B9B9C2; border-bottom: 1px solid #B9B9C2;">
+        
+        <div class="container">
+
+          <div class="row pb-3">
+
+            <div class="col-3">
+
+              <div class="w-100">
+
+                <h4 class="footerHead">MATARE.GE</h4>
+
+                <ul class="footerLists p-0 mt-3">
+                  <li class="mt-2">
+                    <a href="#">ჩვენს შესახებ</a>
+                  </li>
+                  <li class="mt-2">
+                    <a href="#">ავიაბილეთები</a>
+                  </li>
+                  <li class="mt-2">
+                    <a href="#">სერვისები</a>
+                  </li>
+                  <li class="mt-2">
+                    <a href="#">კომფიდენციალურობის პოლიტიკა</a>
+                  </li>
+                  <li class="mt-2">
+                    <a href="#">ხშირად დასმული კითხვები</a>
+                  </li>
+                </ul>
+
+              </div>
+
+            </div>
+
+            <div class="col-3">
+
+              <div class="w-100">
+
+                <h4 class="footerHead">სასარგებლო</h4>
+
+                <ul class="footerLists p-0 mt-3">
+                  <li class="mt-2">
+                    <a href="#">დაზღვევა</a>
+                  </li>
+                  <li class="mt-2">
+                    <a href="#">სასტუმროები</a>
+                  </li>
+                  <li class="mt-2">
+                    <a href="#">კომპენსაცია</a>
+                  </li>
+                  <li class="mt-2">
+                    <a href="#">კარიერა</a>
+                  </li>
+                  <li class="mt-2">
+                    <a href="#">ბლოგი</a>
+                  </li>
+                </ul>
+
+              </div>
+
+            </div>
+
+            <div class="col-3">
+
+              <div class="w-100">
+
+                <h4 class="footerHead">აეროპორტები</h4>
+
+                <ul class="footerLists p-0 mt-3">
+                  <li class="mt-2">
+                    <a href="#">ავიაბილეთები თბილისიდან</a>
+                  </li>
+                  <li class="mt-2">
+                    <a href="#">ავიაბილეთები ქუთაისიდან</a>
+                  </li>
+                  <li class="mt-2">
+                    <a href="#">ავიაბილეთები ბათუმიდან</a>
+                  </li>
+                  <li class="mt-2">
+                    <a href="#">ავიაბილეთები ტრაბზონიდან</a>
+                  </li>
+                  <li class="mt-2">
+                    <a href="#">ავიაბილეთები ერევნიდან</a>
+                  </li>
+                </ul>
+
+              </div>
+
+            </div>
+
+            <div class="col-3">
+
+              <div class="w-100">
+
+                <h4 class="footerHead">კონტაქტი</h4>
+
+                <ul class="footerLists2 p-0 mt-3">
+                  <li class="mt-2">
+                    <a href="#"><img src="./Asset/img/footericon.jpg" alt="icon">&nbsp;მოგვწერეთ</a>
+                  </li>
+                  <li class="mt-2">
+                    <a href="#"><img src="./Asset/img/footericon2.jpg" alt="icon">&nbsp;+995 322 12 14 18</a>
+                  </li>
+                  <li class="mt-2">
+                    <a href="#"><img src="./Asset/img/footericon2.jpg" alt="icon">&nbsp;+995 558 12 14 18</a>
+                  </li>
+                  <li class="mt-2">
+                    <a href="#"><img src="./Asset/img/footericon3.jpg" alt="icon">MATARETRAVEL@GMAIL.COM</a>
+                  </li>
+                </ul>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="container">
+
+        <div class="row mt-5">
+          <div class="col-1">
+            <div class="w-100">
+              <a href="$"><img class="w-100" src="./Asset/img/facebook.png" alt="facebookIcon"></a>
+            </div>
+          </div>
+          <div class="col-1">
+            <div class="w-100">
+              <a href="$"><img class="w-100" src="./Asset/img/whatsapp.png" alt="whatsappIcon"></a>
+            </div>
+          </div>
+          <div class="col-1">
+            <div class="w-100">
+              <a href="$"><img class="w-100" style="height: 86px;" src="./Asset/img/gmail.png" alt="gmailIcon"></a>
+            </div>
+          </div>
+          <div class="col-2">
+            <div class="w-100 pt-2">
+              <a href="#"><img class="w-100" src="./Asset/img/appstoredownload.jpg" alt="appstoreicon"></a>
+            </div>
+          </div>
+          <div class="col-2">
+            <div class="w-100 pt-2">
+              <a href="#"><img class="w-100" style="height: 63px;" src="./Asset/img/playstoredownload.png" alt="playtoreicon"></a>
+            </div>
+          </div>
+          <div class="col-1"></div>
+
+          <!--რუკის სვეტი-->
+          <div class="col-4">
+            <div class="w-100">
+              <!--Map Point-->
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </footer>
 
     <script src="./Asset/js/script.js"></script>
 </body>
