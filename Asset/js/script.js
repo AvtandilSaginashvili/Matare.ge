@@ -1,3 +1,4 @@
+// Clock //
 function updateClock() {
     var now = new Date();
     var hours = now.getHours();
@@ -14,7 +15,7 @@ function updateClock() {
   setInterval(updateClock, 1000);
   updateClock();
 
-
+// Swiper slider //
   var swiper = new Swiper(".mySwiper", {
     effect: "coverflow",
     centeredSlides: true,
@@ -34,7 +35,7 @@ function updateClock() {
     breakpoints: {
 
       768: {
-        slidesPerView: 2, 
+        slidesPerView: 1, 
       },
       1024: {
         slidesPerView: 3, 
@@ -55,7 +56,103 @@ function updateClock() {
     },
   });
 
+//ქალაქები //
 
+const cities = [
+    "თბილისი", "ქუთაისი", "ბათუმი", "ბარსელონა", "აბუდაბი", "ვენა", "ბრიუსელი", "ლარნაკა", "პრაღა", "კოპენჰაგენი", "ტალინი", "პარიზი", "ბერლინი",
+    "კიოლნი", "დორტმუნდი", "ფრანკფურტი", "ჰამბურგი", "მემინგენი", "ათენი", "თესალონიკი", "ბუდაპეშტი", "მილანი", "რომი", "რიგა", "ვილნიუსი", "გდანსკი", "კატოვიცე", "კრაკოვი", "პოზნანი", "ვარშავა", "ვროცლავი", "მადრიდი", "დელი", "პაფოსი", "ლუქსემბურგი", "მიუნხენი", "დუბაი", "მინსკი", "ანტალია", "ასტანა", "დუსელდორფი", "ნიცა", "ალმაატა", "თეირანი", "ერევანი", "თელავივი", "სტამბული", "ბაქო", "დოჰა", "მოსკოვი"
+];
+let cityList = document.getElementById("ulList");
+let selectCity = document.getElementById("selectCity");
+let citiesList = document.getElementById("citiesList");
+
+cities.forEach(city => {
+
+  let liLink = document.createElement("a");
+  //links here //
+  liLink.href = "#";
+  liLink.classList.add("linkCity");
+
+  let listItem = document.createElement("li");
+  listItem.classList.add("listCity");
+  
+  let planeBox = document.createElement("div");
+  planeBox.classList.add("planeBox");
+
+  let listParagraph = document.createElement("p");
+  listParagraph.classList.add("listParagraph");
+  listParagraph.textContent = city;
+
+  listParagraph.addEventListener("click", function() {
+    selectCity.textContent = city;
+    citiesList.style.display = "none";
+});
+
+  let planeImg = document.createElement("img");
+  planeImg.src = "./Asset/img/Airplane Take Off.svg";
+  planeImg.alt = "plane";
+  planeImg.classList.add("planesvg");
+
+  planeBox.appendChild(listParagraph);
+  planeBox.appendChild(planeImg);
+  liLink.appendChild(planeBox);
+  listItem.appendChild(liLink);
+  cityList.appendChild(listItem);
+});
+
+
+
+function chooseCity () {
+
+    citiesList.style.display = "block";
+}
+
+let cityList2 = document.getElementById("ulList2");
+let selectCity2 = document.getElementById("selectCity2");
+let citiesList2 = document.getElementById("citiesList2");
+
+cities.forEach(city => {
+
+  let liLink2 = document.createElement("a");
+  //links here //
+  liLink2.href = "#";
+  liLink2.classList.add("linkCity");
+
+  let listItem2 = document.createElement("li");
+  listItem2.classList.add("listCity");
+  
+  let planeBox2 = document.createElement("div");
+  planeBox2.classList.add("planeBox");
+
+  let listParagraph2 = document.createElement("p");
+  listParagraph2.classList.add("listParagraph");
+  listParagraph2.textContent = city;
+
+  listParagraph2.addEventListener("click", function() {
+    selectCity2.textContent = city;
+    citiesList2.style.display = "none";
+});
+
+  let planeImg2 = document.createElement("img");
+  planeImg2.src = "./Asset/img/Airplane Take Off.svg";
+  planeImg2.alt = "plane";
+  planeImg2.classList.add("planesvg");
+
+  planeBox2.appendChild(listParagraph2);
+  planeBox2.appendChild(planeImg2);
+  liLink2.appendChild(planeBox2);
+  listItem2.appendChild(liLink2);
+  cityList2.appendChild(listItem2);
+});
+
+
+
+function chooseCity2 () {
+
+    citiesList2.style.display = "block";
+}
+
+// Calendar //
   const header = document.querySelector('.calendar h3');
   const dates = document.querySelector('.dates');
   const navs = document.querySelectorAll('#prev, #next');
@@ -73,10 +170,8 @@ function updateClock() {
       'ოქტომბერი',
       'ნოემბერი',
       'დეკემბერი'
-  ];
-  
-  
-  // const serverDate = new Date("2024-05-15"); // Example date received from the server
+];
+
   
   
   let currentDate = new Date();
@@ -115,7 +210,6 @@ function updateClock() {
       dates.innerHTML = datesHtml;
       header.textContent = `${months[month]} ${year}`;
   
-      // Reattach event listeners after rendering the calendar
       attachDateClickListeners();
   }
   
@@ -175,6 +269,7 @@ let isVisible = false;
 toggleButton.addEventListener('click', function() {
   if (isVisible) {
     CalendarHide.style.visibility = 'visible';
+    CalendarHide.style.transition = "all .2s";
   } else {
     CalendarHide.style.visibility = 'hidden';
   }
@@ -183,18 +278,50 @@ toggleButton.addEventListener('click', function() {
 
 
 
+// counter section //
+let counterParagraph = document.getElementById("counter");
+let counterParagraphKid = document.getElementById("counterKid");
+let counterParagraphBaby = document.getElementById("counterBaby");
 
-document.addEventListener("DOMContentLoaded", (event) => {
-  
-  gsap.to(".orangeLine", {
-    width: "100%",
-    repeat: Infinity,
-    duration: 30,
-  });
-  gsap.to(".plane", {
-    x: "1000%",
-    repeat: Infinity,
-    duration: 3,
-  })
+let minusBtn = document.getElementById("minus");
+let plusBtn = document.getElementById("plus");
+let minusBtnKid = document.getElementById("minusKid");
+let plusBtnKid = document.getElementById("plusKid");
+let minusBtnBaby = document.getElementById("minusBaby");
+let plusBtnBaby = document.getElementById("plusBaby");
 
- });
+let k = 0;
+
+
+function passenger () {
+  document.getElementById("passengerBox").style.display = "block";
+
+}
+function submitBtn() {
+  document.getElementById("passengerBox").style.display = "none";
+}
+
+minusBtn.addEventListener("click", () => {
+    counterParagraph.innerHTML = k;
+    k--;
+})
+plusBtn.addEventListener("click", () => {
+    counterParagraph.innerHTML = k;
+    k++;
+})
+minusBtnKid.addEventListener("click", () => {
+  counterParagraphKid.innerHTML = k;
+  k--;
+})
+plusBtnKid.addEventListener("click", () => {
+  counterParagraphKid.innerHTML = k;
+  k++;
+})
+minusBtnBaby.addEventListener("click", () => {
+  counterParagraphBaby.innerHTML = k;
+  k--;
+})
+plusBtnBaby.addEventListener("click", () => {
+  counterParagraphBaby.innerHTML = k;
+  k++;
+})
