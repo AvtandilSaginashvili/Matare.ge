@@ -83,9 +83,10 @@ cities.forEach(city => {
   listParagraph.classList.add("listParagraph");
   listParagraph.textContent = city;
 
-  listParagraph.addEventListener("click", function() {
+  listItem.addEventListener("click", function() {
     selectCity.textContent = city;
     citiesList.style.display = "none";
+    selectCity.style.boxShadow = "0px 0px 10px 0px rgba(62,255,70,0.75)";
 });
 
   let planeImg = document.createElement("img");
@@ -128,7 +129,7 @@ cities.forEach(city => {
   listParagraph2.classList.add("listParagraph");
   listParagraph2.textContent = city;
 
-  listParagraph2.addEventListener("click", function() {
+  listItem2.addEventListener("click", function() {
     selectCity2.textContent = city;
     citiesList2.style.display = "none";
 });
@@ -152,133 +153,143 @@ function chooseCity2 () {
     citiesList2.style.display = "block";
 }
 
-// Calendar //
-  const header = document.querySelector('.calendar h3');
-  const dates = document.querySelector('.dates');
-  const navs = document.querySelectorAll('#prev, #next');
-  
-  const months = [
-      "იანვარი",
-      'თებერვალი',
-      'მარტი',
-      'აპრილი',
-      'მაისი',
-      'ივნისი',
-      'ივლისი',
-      'აგვისტო',
-      'სექტემბერი',
-      'ოქტომბერი',
-      'ნოემბერი',
-      'დეკემბერი'
-];
-
-  
-  
-  let currentDate = new Date();
-  let selectedDate = currentDate;
-  let year = currentDate.getFullYear();
-  let month = currentDate.getMonth();
-  
-  function renderCalendar() {
-      const start = new Date(year, month, 1).getDay();
-      const endDate = new Date(year, month + 1, 0).getDate();
-      const end = new Date(year, month, endDate).getDay();
-      const endDatePrev = new Date(year, month, 0).getDate();
-  
-      let datesHtml = "";
-  
-      const startAdjusted = (start === 0 ? 6 : start) - 1;
-  
-      for (let i = startAdjusted; i > 0; i--) {
-          const prevMonthDay = endDatePrev - i + 1;
-          datesHtml += `<li class="inactive number prevMonth">${prevMonthDay}</li>`;
-      }
-  
-      for (let i = 1; i <= endDate; i++) {
-          let className =
-              i === selectedDate.getDate() &&
-              month === selectedDate.getMonth() &&
-              year === selectedDate.getFullYear() ? ' class="today number"' : ' class="number"';
-          datesHtml += `<li${className}>${i}</li>`;
-      }
-  
-      for (let i = end; i < 7; i++) {
-          const nextMonthDay = i - end + 1;
-          datesHtml += `<li class="inactive number nextMonth">${nextMonthDay}</li>`;
-      }
-  
-      dates.innerHTML = datesHtml;
-      header.textContent = `${months[month]} ${year}`;
-  
-      attachDateClickListeners();
-  }
-  
-  function attachDateClickListeners() {
-      const dateOfNumber = document.querySelectorAll('.number');
-  
-      dateOfNumber.forEach((item) => {
-          item.addEventListener('click', (e) => {
-              const clickedDay = parseInt(e.target.textContent);
-              if (e.target.classList.contains('prevMonth')) {
-                  month--;
-                  if (month < 0) {
-                      month = 11;
-                      year--;
-                  }
-              } else if (e.target.classList.contains('nextMonth')) {
-                  month++;
-                  if (month > 11) {
-                      month = 0;
-                      year++;
-                  }
-              }
-              selectedDate = new Date(year, month, clickedDay);
-              renderCalendar();
-              console.log(selectedDate.toLocaleDateString());
-          });
-      });
-  }
-  
-  navs.forEach((nav) => {
-      nav.addEventListener("click", (e) => {
-          const btnId = e.target.id;
-  
-          if (btnId === "prev" && month === 0) {
-              year--;
-              month = 11;
-          } else if (btnId === "next" && month === 11) {
-              year++;
-              month = 0;
-          } else {
-              month = btnId === "next" ? month + 1 : month - 1;
-          }
-          
-          renderCalendar();
-      });
-  });
-  
-  renderCalendar();
-
-  
+const header = document.querySelector('.calendar h3');
+const dates = document.querySelector('.dates');
+const navs = document.querySelectorAll('#prev, #next');
 const toggleButton = document.getElementById('toggleButton');
+const toggleButton2 = document.getElementById('toggleButton2');
 const CalendarHide = document.querySelector(".calendar");
 
+const months = [
+    "იანვარი",
+    'თებერვალი',
+    'მარტი',
+    'აპრილი',
+    'მაისი',
+    'ივნისი',
+    'ივლისი',
+    'აგვისტო',
+    'სექტემბერი',
+    'ოქტომბერი',
+    'ნოემბერი',
+    'დეკემბერი'
+];
 
-let isVisible = false;
+let currentDate = new Date();
+let selectedDate = currentDate;
+let year = currentDate.getFullYear();
+let month = currentDate.getMonth();
+let activeButton; // Variable to track which button was clicked
+
+function renderCalendar() {
+    const start = new Date(year, month, 1).getDay();
+    const endDate = new Date(year, month + 1, 0).getDate();
+    const end = new Date(year, month, endDate).getDay();
+    const endDatePrev = new Date(year, month, 0).getDate();
+
+    let datesHtml = "";
+
+    const startAdjusted = (start === 0 ? 6 : start) - 1;
+
+    for (let i = startAdjusted; i > 0; i--) {
+        const prevMonthDay = endDatePrev - i + 1;
+        datesHtml += `<li class="inactive number prevMonth">${prevMonthDay}</li>`;
+    }
+
+    for (let i = 1; i <= endDate; i++) {
+        let className =
+            i === selectedDate.getDate() &&
+            month === selectedDate.getMonth() &&
+            year === selectedDate.getFullYear() ? ' class="today number"' : ' class="number"';
+        datesHtml += `<li${className}>${i}</li>`;
+    }
+
+    for (let i = end; i < 7; i++) {
+        const nextMonthDay = i - end + 1;
+        datesHtml += `<li class="inactive number nextMonth">${nextMonthDay}</li>`;
+    }
+
+    dates.innerHTML = datesHtml;
+    header.textContent = `${months[month]} ${year}`;
+
+    attachDateClickListeners();
+}
+
+function attachDateClickListeners() {
+    const dateOfNumber = document.querySelectorAll('.number');
+
+    dateOfNumber.forEach((item) => {
+        item.addEventListener('click', (e) => {
+            const clickedDay = parseInt(e.target.textContent);
+            if (e.target.classList.contains('prevMonth')) {
+                month--;
+                if (month < 0) {
+                    month = 11;
+                    year--;
+                }
+            } else if (e.target.classList.contains('nextMonth')) {
+                month++;
+                if (month > 11) {
+                    month = 0;
+                    year++;
+                }
+            }
+            selectedDate = new Date(year, month, clickedDay);
+            renderCalendar();
+            console.log(selectedDate.toLocaleDateString());
+            activeButton.textContent = selectedDate.toLocaleDateString(); // Update the text content of the active button
+            toggleCalendar(); // Close the calendar after selecting a date
+        });
+    });
+}
+
+navs.forEach((nav) => {
+    nav.addEventListener("click", (e) => {
+        const btnId = e.target.id;
+
+        if (btnId === "prev" && month === 0) {
+            year--;
+            month = 11;
+        } else if (btnId === "next" && month === 11) {
+            year++;
+            month = 0;
+        } else {
+            month = btnId === "next" ? month + 1 : month - 1;
+        }
+
+        renderCalendar();
+    });
+});
+
+renderCalendar();
+
+function toggleCalendar() {
+    if (CalendarHide.classList.contains("active")) {
+        CalendarHide.classList.remove("active");
+    } else {
+        CalendarHide.classList.add("active");
+    }
+}
 
 toggleButton.addEventListener('click', function() {
-  if (isVisible) {
-    CalendarHide.style.visibility = 'visible';
-    CalendarHide.style.transition = "all .2s";
-  } else {
-    CalendarHide.style.visibility = 'hidden';
-  }
-  isVisible = !isVisible;
+    activeButton = toggleButton; // Set the active button to toggleButton
+    toggleCalendar();
+});
+
+toggleButton2.addEventListener('click', function() {
+    activeButton = toggleButton2; // Set the active button to toggleButton2
+    toggleCalendar();
 });
 
 
 
+
 // counter section //
+
+let counter = 0;
+let counterKid = 0;
+let counterBaby = 0;
+
 let counterParagraph = document.getElementById("counter");
 let counterParagraphKid = document.getElementById("counterKid");
 let counterParagraphBaby = document.getElementById("counterBaby");
@@ -290,38 +301,59 @@ let plusBtnKid = document.getElementById("plusKid");
 let minusBtnBaby = document.getElementById("minusBaby");
 let plusBtnBaby = document.getElementById("plusBaby");
 
-let k = 0;
-
-
 function passenger () {
-  document.getElementById("passengerBox").style.display = "block";
-
+    document.getElementById("passengerBox").style.display = "block";
 }
+
 function submitBtn() {
-  document.getElementById("passengerBox").style.display = "none";
+    document.getElementById("passengerBox").style.display = "none";
+}
+
+function updateCounter() {
+    counterParagraph.innerHTML = counter;
+}
+
+function updateCounterKid() {
+    counterParagraphKid.innerHTML = counterKid;
+}
+
+function updateCounterBaby() {
+    counterParagraphBaby.innerHTML = counterBaby;
 }
 
 minusBtn.addEventListener("click", () => {
-    counterParagraph.innerHTML = k;
-    k--;
-})
+  if (counter > 0) {
+      counter--;
+      updateCounter();
+  }
+});
+
 plusBtn.addEventListener("click", () => {
-    counterParagraph.innerHTML = k;
-    k++;
-})
+    counter++;
+    updateCounter();
+});
+
 minusBtnKid.addEventListener("click", () => {
-  counterParagraphKid.innerHTML = k;
-  k--;
-})
+  if (counterKid > 0) {
+      counterKid--;
+      updateCounterKid();
+  }
+});
+
 plusBtnKid.addEventListener("click", () => {
-  counterParagraphKid.innerHTML = k;
-  k++;
-})
+    counterKid++;
+    updateCounterKid();
+});
+
 minusBtnBaby.addEventListener("click", () => {
-  counterParagraphBaby.innerHTML = k;
-  k--;
-})
+  if (counterBaby > 0) {
+      counterBaby--;
+      updateCounterBaby();
+  }
+});
+
 plusBtnBaby.addEventListener("click", () => {
-  counterParagraphBaby.innerHTML = k;
-  k++;
-})
+    counterBaby++;
+    updateCounterBaby();
+});
+

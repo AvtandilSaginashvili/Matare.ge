@@ -64,6 +64,24 @@ body {
     -moz-box-shadow: 0px 0px 8px 0px rgba(0,0,0,0.75);
 }
 
+.navigationMobile {
+    background-color: #FFC33E;
+}
+
+.togglerBtn {
+    border: none !important;
+    background-color: transparent !important;
+    outline: none !important;
+    padding: 0 !important;
+}
+
+.togglerBtn:focus {
+    border: none !important;
+    outline: none !important;
+    background-color: transparent !important;
+    outline-width: 0 !important;
+}
+
 .links {
     font-family: mtavruli;
     font-weight: 400 !important;
@@ -118,11 +136,27 @@ body {
 }
 
 .linksHov {
-    transition: 0.5s;
+    transition: 0.5s !important;
 }
 
 .linksHov:focus .traingleHover {
     transform: rotate(90deg);
+}
+
+
+
+.closeButton {
+    border: none;
+    background-color: transparent;
+    width: 50px;
+    height: 50px;
+}
+
+.offcanvasBody {
+    height: 100vh !important;
+    background-image: url(../img/offcanvas\ background.png);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 
@@ -144,6 +178,10 @@ body {
     z-index: -50;
     top: 0;
     left: 0;
+}
+
+.marginCol {
+    margin: 46px 0 0 11px;
 }
 
 .formBox {
@@ -338,6 +376,10 @@ input[type="radio"]:checked + .radio-custom::after {
     visibility: hidden;
     font-family: mtavruli;
     z-index: 200;
+}
+
+.calendar.active {
+    visibility: visible;
 }
 
 .calendar header { 
@@ -562,6 +604,13 @@ input[type="radio"]:checked + .radio-custom::after {
     color: #fff;
 }
 
+/* .searchSvg {
+    transition: 0.5s;
+}
+
+.searchBtn:focus .searchSvg {
+    visibility: hidden;
+} */
 
 .blueLine {
     height: 10px;
@@ -616,6 +665,10 @@ input[type="radio"]:checked + .radio-custom::after {
     font-size: 72px;
     font-style: normal;
     font-weight: 400;
+}
+
+.whyCol {
+    padding: 0 !important;
 }
 
 .cards {
@@ -719,6 +772,16 @@ input[type="radio"]:checked + .radio-custom::after {
     -moz-box-shadow: 0px 0px 8px 0px rgba(246,197,89,1);
     position: relative;
     z-index: 500 !important;
+}
+
+.offerCards2 {
+    margin-left: -15px !important;
+     z-index: 1 !important;
+}
+
+.offerCards3 {
+    margin-left: -25px !important;
+     z-index: 1 !important;
 }
 
 .offerBlogHead {
@@ -841,6 +904,10 @@ input[type="radio"]:checked + .radio-custom::after {
     color: #181E4B;
     text-align: center;
     line-height: 71px;
+}
+
+.serviceCol {
+    padding: 0 !important;
 }
 
 .serviceCard {
@@ -1061,7 +1128,7 @@ input[type="radio"]:checked + .radio-custom::after {
     margin: 0;
 }
 
-.blogHeadInside {
+.ratingHeadInside {
     font-family: mtavruli;
     font-weight: 600;
     font-style: italic;
@@ -1070,7 +1137,7 @@ input[type="radio"]:checked + .radio-custom::after {
     margin: 0;
 }
 
-.blogParagraphInside {
+.ratingParagraphInside {
     font-family: mtavruli;
     font-style: italic;
     font-weight: 400;
@@ -1127,4 +1194,169 @@ input[type="radio"]:checked + .radio-custom::after {
     font-weight: 400;
     font-size: 16px;
     font-style: italic;
+}
+
+
+
+
+/* media queries */
+
+
+
+@media screen and (max-width: 768px) {
+    
+    .links {
+        color: #fff !important;
+    }
+    .traingleHover path {
+        fill: #fff !important;
+    }
+    .downMenu {
+        border-radius: 0 !important;
+        border: none !important;
+        background-color: transparent !important;
+        padding: 0 !important;
+        padding-top: 4px !important;
+        top: 32px !important;
+        left: 0 !important;
+        transition: 0.5s !important;
+    }
+    .dropLink {
+        color: #fff !important;
+        background-color: transparent !important;
+    }
+    .citiesList {
+        width: 100%;
+        height: 339px;
+        background-color: #FFC33E;
+        border-radius: 20px;
+        overflow-y: scroll;
+        position: absolute;
+        right: 0;
+        top: -35px;
+        z-index: 5;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        padding: 19px;
+        display: none;
+    }
+    .calendar {
+        margin: auto;
+        width: 100%;
+        height: 288px;
+        background-color: #FFC33E;
+        padding: 1rem;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        position: absolute;
+        right: 0;
+        top: 40px;
+        visibility: hidden;
+        font-family: mtavruli;
+        z-index: 200;
+    }
+    .passengerBox {
+        width: 100%;
+        height: 221px;
+        background-color: #FFC33E;
+        border-radius: 10px;
+        position: absolute;
+        top: 40px;
+        right: 0;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        z-index: 10;
+        display: none;
+    }
+    .marginCol {
+        margin: 0;
+    }
+    .whyMatare {
+        font-size: 29px;
+    }
+    .whyMatare span {
+        font-size: 33px;
+    }
+    .whyCol {
+        padding: 0 12px 0 12px !important;
+    }
+    .offerHead {
+        font-size: 34px;
+    }
+    .offerHeadsecond {
+        font-size: 18px;
+    }
+    .offerParagraph {
+        font-size: 16px;
+    }
+    .offerCards2 {
+        margin: 0 !important;
+    }
+    .offerCards3 {
+        margin: 0 !important;
+    }
+    .serviceHead {
+        font-size: 24px;
+    }
+    .serviceCol {
+        padding: 12px 24px 12px 24px !important;
+    }
+    .blogHead {
+        font-size: 24px;
+    }
+    .blogParagraph {
+        padding: 0;
+    }
+    .blogImgBox {
+        height: 210px;
+    }
+    .blogHeadleft {
+        font-size: 24px;
+    }
+    .blogDate {
+        font-size: 14px;
+    }
+    .blogParagraphInside {
+        font-size: 16px;
+    }
+    .blogHeadRight {
+        font-size: 20px;
+    }
+    .blogImgBoxes {
+        height: 180px !important;
+        width: 200px !important;
+    }
+    .blogDateright {
+        margin-top: 15px;
+        font-size: 14px;
+    }
+    .ratingHead {
+        font-size: 24px;
+        text-align: center;
+    }
+    .ratingParagraph {
+        font-size: 19px;
+    }
+    .ratingHeadInside {
+        font-size: 24px;
+    }
+    .ratingParagraphInside {
+        font-size: 18px;
+    }
+    .footerLists li > a {
+        font-size: 13px;
+    }
+    .matareEmail {
+        font-size: 14px;
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        text-decoration: none;
+        color: #7A7A7A;
+        font-family: mtavruli;
+        font-weight: 400;
+        font-size: 16px;
+        font-style: italic;
+    }
+    .footerHead {
+        font-size: 18px;
+    }
 }
