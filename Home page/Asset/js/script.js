@@ -132,6 +132,7 @@ cities.forEach(city => {
   listItem2.addEventListener("click", function() {
     selectCity2.textContent = city;
     citiesList2.style.display = "none";
+    selectCity2.style.boxShadow = "0px 0px 10px 0px rgba(62,255,70,0.75)";
 });
 
   let planeImg2 = document.createElement("img");
@@ -153,6 +154,8 @@ function chooseCity2 () {
     citiesList2.style.display = "block";
 }
 
+
+// Calendar 
 const header = document.querySelector('.calendar h3');
 const dates = document.querySelector('.dates');
 const navs = document.querySelectorAll('#prev, #next');
@@ -179,7 +182,7 @@ let currentDate = new Date();
 let selectedDate = currentDate;
 let year = currentDate.getFullYear();
 let month = currentDate.getMonth();
-let activeButton; // Variable to track which button was clicked
+let activeButton; 
 
 function renderCalendar() {
     const start = new Date(year, month, 1).getDay();
@@ -237,8 +240,8 @@ function attachDateClickListeners() {
             selectedDate = new Date(year, month, clickedDay);
             renderCalendar();
             console.log(selectedDate.toLocaleDateString());
-            activeButton.textContent = selectedDate.toLocaleDateString(); // Update the text content of the active button
-            toggleCalendar(); // Close the calendar after selecting a date
+            activeButton.textContent = selectedDate.toLocaleDateString();
+            toggleCalendar();
         });
     });
 }
@@ -266,20 +269,37 @@ renderCalendar();
 function toggleCalendar() {
     if (CalendarHide.classList.contains("active")) {
         CalendarHide.classList.remove("active");
+        activeButton.classList.add("active");
+
+        const bothButtonsActive = toggleButton.classList.contains("active") && toggleButton2.classList.contains("active");
+
+        if (bothButtonsActive) {
+            toggleButton.style.boxShadow = "0px 0px 10px 0px rgba(62, 255, 70, 0.75)";
+            toggleButton2.style.boxShadow = "0px 0px 10px 0px rgba(62, 255, 70, 0.75)";
+        } else if (activeButton === toggleButton) { // If only toggleButton is active
+            toggleButton.style.boxShadow = "0px 0px 10px 0px rgba(62, 255, 70, 0.75)";
+            toggleButton2.style.boxShadow = "0px 0px 10px 0px rgba(255, 0, 0, 0.75)";
+        } else if (activeButton === toggleButton2) { // If only toggleButton2 is active
+            toggleButton.style.boxShadow = "0px 0px 10px 0px rgba(255, 0, 0, 0.75)";
+            toggleButton2.style.boxShadow = "0px 0px 10px 0px rgba(62, 255, 70, 0.75)";
+        }
     } else {
         CalendarHide.classList.add("active");
     }
 }
 
+
+
 toggleButton.addEventListener('click', function() {
-    activeButton = toggleButton; // Set the active button to toggleButton
+    activeButton = toggleButton;
     toggleCalendar();
 });
 
 toggleButton2.addEventListener('click', function() {
-    activeButton = toggleButton2; // Set the active button to toggleButton2
+    activeButton = toggleButton2;
     toggleCalendar();
 });
+
 
 
 
@@ -300,6 +320,7 @@ let minusBtnKid = document.getElementById("minusKid");
 let plusBtnKid = document.getElementById("plusKid");
 let minusBtnBaby = document.getElementById("minusBaby");
 let plusBtnBaby = document.getElementById("plusBaby");
+let passengerBtn = document.getElementById("passengerButton");
 
 function passenger () {
     document.getElementById("passengerBox").style.display = "block";
@@ -307,6 +328,7 @@ function passenger () {
 
 function submitBtn() {
     document.getElementById("passengerBox").style.display = "none";
+    passengerBtn.style.boxShadow = "0px 0px 10px 0px rgba(62, 255, 70, 0.75)";
 }
 
 function updateCounter() {

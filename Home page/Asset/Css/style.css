@@ -327,10 +327,6 @@ input[type="radio"]:checked + .radio-custom::after {
     transition: 0.5s;
 }
 
-.listCity:hover .planesvg rect {
-    fill: #000 !important;
-}
-
 .chooseDate {
     width: 100%;
     height: 40px;
@@ -361,6 +357,14 @@ input[type="radio"]:checked + .radio-custom::after {
 .chooseDate:focus .calendarIcon {
     visibility: hidden;
 }
+
+/* #toggleButton.active {
+    box-shadow: 0px 0px 10px 0px rgba(255, 0, 0, 0.75);
+}
+#toggleButton2.active {
+    box-shadow: 0px 0px 10px 0px rgba(255, 0, 0, 0.75);
+} */
+
 
 .calendar {
     margin: auto;
