@@ -90,7 +90,7 @@ cities.forEach(city => {
 });
 
   let planeImg = document.createElement("img");
-  planeImg.src = "./Asset/img/Airplane Take Off.svg";
+  planeImg.src = "../Asset/img/Airplane Take Off.svg";
   planeImg.alt = "plane";
   planeImg.classList.add("planesvg");
 
@@ -136,7 +136,7 @@ cities.forEach(city => {
 });
 
   let planeImg2 = document.createElement("img");
-  planeImg2.src = "./Asset/img/Airplane Take Off.svg";
+  planeImg2.src = "../Asset/img/Airplane Take Off.svg";
   planeImg2.alt = "plane";
   planeImg2.classList.add("planesvg");
 
