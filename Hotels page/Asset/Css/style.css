@@ -1,12 +1,11 @@
 * {
-    box-sizing: border-box;
+    box-sizing: border-box; 
 }
 
 body {
     margin: 0;
     padding: 0;
 }
-
 
 @font-face {
     font-family: mtavruli;
@@ -27,7 +26,6 @@ body {
     font-family: aladin;
     src: url(../fonts/Aladin-Regular.ttf);
 }
-
 
 
 
@@ -73,6 +71,7 @@ body {
     background-color: transparent !important;
     outline: none !important;
     padding: 0 !important;
+    box-shadow: none !important;
 }
 
 .togglerBtn:focus {
@@ -164,748 +163,100 @@ body {
 /* Hero Section */
 
 
-
-.homeBack {
-    position: relative;
-    border-radius: 20px;
-    margin-top: 8px;
+.mainHead {
+    font-family: mtavruli;
+    font-size: 24px;
+    font-style: italic;
+    font-weight: 400;
+    color: #808080;
+    margin: 0;
+    margin-top: 18px;
 }
 
-.backgroundImg {
-    position: absolute;
-    width: 100%;
+.hotelsMainBack {
+    height: 644px;
+}
+
+.hotelsMainBack2 {
+    background-color: #FFC33E;
+    border-radius: 12px;
+    padding: 48px;
+}
+
+.hotelsMainImg {
+    z-index: -10;
+    top: 0;
+    left: 0;
     height: 100%;
-    z-index: -50;
-    top: 0;
-    left: 0;
 }
 
-.marginCol {
-    margin: 46px 0 0 11px;
-}
-
-.formBox {
-    background-color: #fff;
-    border-radius: 20px;
-    padding: 21px 17px 31px 19px;
-    height: 642px;
-}
-
-.radioLabel {
-    position: relative;
-    cursor: pointer;
+.backImgHead {
     font-family: mtavruli;
-    color: #FFC33E;
-    font-style: italic;
-    font-size: 16px;
-    font-weight: 400;
-}
-  
-.radio-custom {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 20px;
-    width: 20px;
-    background-color: transparent;
-    border-radius: 50%;
-    border: 2px solid #FFC33E;
-}
-  
-input[type="radio"] {
-    visibility: hidden;
-}
-  
-input[type="radio"]:checked + .radio-custom::after {
-    content: '';
-    display: block;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background-color: #FFC33E;
-  }
-  
-
-  .formDestination label{
-    color: #666666;
-    font-family: mtavruli;
-    font-style: italic;
-    font-weight: 400;
-    font-size: 22px;
-
-  }
-
-  .chooseCity {
-    height: 40px;
-    width: 100%;
-    background-color: transparent;
-    border-radius: 10px;
-    border: none;
-    box-shadow: 0px 0px 10px 0px rgba(255,195,62,0.75);
-    -webkit-box-shadow: 0px 0px 10px 0px rgba(255,195,62,0.75);
-    -moz-box-shadow: 0px 0px 10px 0px rgba(255,195,62,0.75);
-    padding-left: 8px;
-    font-family: mtavruli;
-    font-style: italic;
-    font-weight: 400;
-    font-size: 14px;
-    color: #828181;
-    cursor: pointer;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.citiesList {
-    width: 368px;
-    height: 539px;
-    background-color: #FFC33E;
-    border-radius: 20px;
-    overflow-y: scroll;
-    position: absolute;
-    right: -390px;
-    top: -80px;
-    z-index: 5;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    padding: 19px;
-    display: none;
-}
-
-.citiesList::-webkit-scrollbar {
-    width: 0;
-}
-
-.citiesList::-webkit-scrollbar-track {
-    background: transparent;
-}
-
-.citiesList::-webkit-scrollbar-thumb {
-    background: transparent;
-}
-
-.listCity {
-    list-style: none;
-    background-color: #fff;
-    width: 100%;
-    height: 40px;
-    padding: 5px;
-    border-radius: 10px;
-    margin: 8px;
-    margin-left: 0;
-    transition: 0.2s;
-}
-
-.linkCity {
-    text-decoration: none;
-    color: #000;
-    width: 100%;
-    font-family: mtavruli;
-    font-weight: 400;
-    font-style: italic;
-    font-size: 24px;
-}
-
-.planeBox {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.listParagraph {
-    margin: 0;
-}
-
-.listCity:hover {
-    border: 4px solid #3eff44b0 !important;
-}
-
-.planesvg {
-    transition: 0.5s;
-}
-
-.chooseDate {
-    width: 100%;
-    height: 40px;
-    background-color: transparent;
-    border-radius: 10px;
-    border: none;
-    outline: none;
-    box-shadow: 0px 0px 10px 0px rgba(255,195,62,0.75);
-    -webkit-box-shadow: 0px 0px 10px 0px rgba(255,195,62,0.75);
-    -moz-box-shadow: 0px 0px 10px 0px rgba(255,195,62,0.75);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-left: 8px;
-    font-family: mtavruli;
-    font-style: italic;
-    font-weight: 400;
-    font-size: 14px;
-    color: #828181;
-    transition: 0.5s;
-}
-
-.chooseDate:focus {
-    background-color: #FFC33E;
-    color: #fff;
-}
-
-.chooseDate:focus .calendarIcon {
-    visibility: hidden;
-}
-
-
-.calendar {
-    margin: auto;
-    width: 368px;
-    height: 288px;
-    background-color: #FFC33E;
-    padding: 1rem;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    position: absolute;
-    right: -390px;
-    top: 0;
-    visibility: hidden;
-    font-family: mtavruli;
-    z-index: 200;
-}
-
-.calendar.active {
-    visibility: visible;
-}
-
-.calendar header { 
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    color: #fff;
-    font-family: mtavruli;
-    font-weight: 700;
-    font-style: italic;
-    font-size: 24px;
-}
-
-.calendar ul {
-    list-style: none;
-    display: flex;
-    flex-wrap: wrap;
-    width: 100%;
-    margin-top: 15px;
-}
-
-.calendar ul li {
-    width: calc(100% / 8);
-    position: relative;
-    z-index: 2 ;
-    color: #fff;
-    font-weight: 600;
-    font-family: aladin;
-}
-
-#prev, #next {
-    width: 20px;
-    height: 20px;
-    position: relative;
-    top: 50%;
-    border: none;
-    background: transparent;
-    cursor: pointer;
-}
-
-#prev::before, #next::before {
-    content: '';
-    width : 50%;
-    height: 50%;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    border-style: solid;
-    border-width: 0.15em 0.15em 0 0;
-    border-color: #ffffff;
-}
-
-#prev::before {
-    transform: translate(-50%, -50%) rotate(-135deg);
-}
-#next::before {
-    transform: translate(-50%, -50%) rotate(45deg);
-}
-
-#prev:hover::before, 
-#next:hover::before {
-    border-color: #000;
-}
-
-.days {
-    font-weight: 600;
-    width: 318px;
-    height: 22px;
-    font-family: mtavruli;
-    font-size: 16px;
-    padding: 0 !important;
-    color: #fff;
-    display: flex;
-    justify-content: space-around;
-    border-bottom: 1px solid #fff;
-}
-
-.dates {
-    padding: 0 !important;
-    padding-left: 15px !important;
-    display: flex;
-    row-gap: 7px !important;
-}
-
-.dates li.today {
-    color: #000000;
-}
-.dates li.today::before {
-    content: '';
-    width: 2rem;
-    height: 2rem;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-100%, -55%);
-    background: transparent;
-    border-radius: 25%;
-    border: 2px dotted #D9D9D9;
-    z-index: -1;
-}
-
-.dates li:hover::before {
-    content: '';
-    width: 2rem;
-    height: 2rem;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-92%, -55%);
-    background-color: transparent;
-    border-radius: 25%;
-    border: 2px dashed #fff;
-    z-index: -1;
-}
-.dates li:hover {
-    color: #fff;
-    cursor: pointer;
-}
-
-.dates li.inactive {
-    color: #ccc;
-}
-
-.passengerBtn {
-    width: 100%;
-    height: 40px;
-    background-color: transparent;
-    border-radius: 10px;
-    border: none;
-    outline: none;
-    box-shadow: 0px 0px 10px 0px rgba(255,195,62,0.75);
-    -webkit-box-shadow: 0px 0px 10px 0px rgba(255,195,62,0.75);
-    -moz-box-shadow: 0px 0px 10px 0px rgba(255,195,62,0.75);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-left: 8px;
-    font-family: mtavruli;
-    font-style: italic;
-    font-weight: 400;
-    font-size: 14px;
-    color: #828181;
-    transition: 0.5s;
-}
-
-.passengerBtn:focus {
-    background-color: #FFC33E;
-    color: #fff;
-}
-
-.passengerBox {
-    width: 325px;
-    height: 221px;
-    background-color: #FFC33E;
-    border-radius: 10px;
-    position: absolute;
-    top: -41px;
-    right: -345px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    z-index: 10;
-    display: none;
-}
-
-.passengerText {
-    margin: 0;
-    color: #fff;
-    font-family: mtavruli;
-    font-weight: 400;
-    font-style: italic;
-    font-size: 20px;
-}
-
-.counterbutt {
-    height: auto;
-    border: none;
-    background-color: transparent;
-    color: #fff;
-    font-size: 34px;
-    font-family: sans-serif;
-}
-
-.counterParagraph {
-    color: #fff;
-    margin: 0;
-    font-family: sans-serif;
-    font-weight: 400;
-    font-size: 24px;
-}
-
-.submitBtn {
-    width: 50%;
-    height: 28px;
-    background-color: #F7CE6E;
-    border: none;
-    border-radius: 5px;
-}
-
-.searchBtn {
-    width: 50%;
-    height: 40px;
-    background-color: transparent;
-    border-radius: 10px;
-    border: none;
-    outline: none;
-    box-shadow: 0px 0px 10px 0px rgba(255,195,62,0.75);
-    -webkit-box-shadow: 0px 0px 10px 0px rgba(255,195,62,0.75);
-    -moz-box-shadow: 0px 0px 10px 0px rgba(255,195,62,0.75);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-left: 8px;
-    font-family: mtavruli;
-    font-style: italic;
-    font-weight: 400;
-    font-size: 14px;
-    color: #828181;
-    transition: 0.5s;
-}
-
-.searchBtn:focus {
-    background-color: #FFC33E;
-    color: #fff;
-}
-
-/* .searchSvg {
-    transition: 0.5s;
-}
-
-.searchBtn:focus .searchSvg {
-    visibility: hidden;
-} */
-
-.blueLine {
-    height: 10px;
-    background-color: #4C9EFF;
-    border-radius: 25px;
-}
-
-.orangeLine {
-    width: 0%;
-    height: 10px;
-    position: relative;
-    border-radius: 25px;
-    background-color: #E69F4D;
-    -webkit-animation: planeAnimation 25s linear infinite;
-    animation: planeAnimation 25s linear infinite;
-}
-
-.plane {
-    width: 60px;
-    height: 60px;
-    position: absolute;
-    right: -53.5px;
-    top: -25px;
-}
-
-@keyframes planeAnimation {
-    0% {
-        width: 0%;
-    }
-    100% {
-        width: 100%;
-    }
-}
-
-
-
-
-/* რატომ MATARE.ge */
-
-
-.whyMatare {
-    font-family: mtavruli;
-    font-weight: 700;
-    font-size: 60px;
-    font-style: italic;
-    color: #181E4B;
-    text-align: center;
-}
-
-.whyMatare span {
-    font-family: Bree Serif;
-    font-size: 72px;
-    font-style: normal;
-    font-weight: 400;
-}
-
-.whyCol {
-    padding: 0 !important;
-}
-
-.cards {
-    height: 310px !important;
-    border-radius: 10px;
-    background-color: #F9F9F9;
-    padding: 15px;
-    box-shadow: 0px 6px 12px 0px rgba(191,191,191,0.75);
-    -webkit-box-shadow: 0px 6px 12px 0px rgba(191,191,191,0.75);
-    -moz-box-shadow: 0px 6px 12px 0px rgba(191,191,191,0.75);
-    transition: 0.5s;
-}
-
-.cards:hover {
-    box-shadow: 0px 0px 14px 0px rgba(230,161,78,0.75);
-    -webkit-box-shadow: 0px 0px 14px 0px rgba(230,161,78,0.75);
-    -moz-box-shadow: 0px 0px 14px 0px rgba(230,161,78,0.75);
-}
-
-.cardHeader {
-    font-family: mtavruli;
-    font-weight: bold;
-    font-style: italic;
-    font-size: 16.4px;
-    color: #1E1D4C;
-    margin: 0;
-    align-items: center;
-}
-
-.cardParagraph {
-    margin: 0;
-    font-family: mtavruli;
-    font-weight: 400;
-    font-style: italic;
-    font-size: 14px;
-    text-align: center;
-    line-height: 20px;
-    margin-top: 3px;
-}
-
-
-
-/* ჩვენ გთავაზობთ განყოფილება */
-
-
-.offerContainer {
-    padding-left: 7% !important;
-    padding-right: 7% !important;
-}
-
-.offerHead {
-    font-family: mtavruli;
-    font-weight: 400;
-    font-style: italic;
+    font-weight: 900;
     font-size: 54px;
+    color: #fff;
+    -webkit-text-stroke-width: 0.1px;
+    -webkit-text-stroke-color: #000;
     margin: 0;
-    color: #000;
+    position: absolute;
+    bottom: 88px;
+    left: 52px;
 }
 
-.offerImg {
-    max-width: 80px !important;
-    height: 100px !important;
-    margin-right: 36px;
-}
-
-.offerHeadsecond {
+.hotelsArrow {
     font-family: mtavruli;
-    font-style: italic;
-    font-weight: 700;
-    font-size: 26px;
+    font-weight: 900;
+    font-size: 48px;
+    color: #fff;
+    -webkit-text-stroke-width: 0.1px;
+    -webkit-text-stroke-color: #000;
     margin: 0;
-    color: #000;
+    position: absolute;
+    bottom: 0;
+    left: 38%;
 }
 
-.offerParagraph {
+.backImgHead2 {
     font-family: mtavruli;
+    font-weight: 900;
+    font-size: 34px;
+    color: #fff;
+    -webkit-text-stroke-width: 0.1px;
+    -webkit-text-stroke-color: #000;
+    margin: 0;
+    text-align: center;
+}
+
+.hotelsArrow2 {
+    font-family: mtavruli;
+    font-weight: 900;
+    font-size: 28px;
+    color: #fff;
+    -webkit-text-stroke-width: 0.1px;
+    -webkit-text-stroke-color: #000;
+    margin: 0;
+    margin-top: 18px;
+    text-align: center;
+}
+
+
+
+/* Text Content */
+
+
+.blogSpace {
+    height: 250px;
+    background-color: #7A7A7A;
+    border-radius: 10px;
+}
+
+.hotelsTextParagraph {
+    font-family: mtavruli;
+    font-weight: 600;
     font-style: italic;
-    font-weight: 400;
     font-size: 20px;
     margin: 0;
-    color: #000;
-    margin-top: 6px;
-}
-
-.offerCards {
-    border-radius: 20px;
-    background-color: #fff;
-    height: 100% !important;
-    box-shadow: 0px 7px 14px 0px rgba(192,192,192,0.75);
-    -webkit-box-shadow: 0px 7px 14px 0px rgba(192,192,192,0.75);
-    -moz-box-shadow: 0px 7px 14px 0px rgba(192,192,192,0.75);
-    padding: 35px;
-    transition: 0.5s ease-out;
-}
-
-.offerCards:hover {
-    transform: scale(1.2);
-    cursor: pointer;
-    box-shadow: 0px 0px 8px 0px rgba(246,197,89,1);
-    -webkit-box-shadow: 0px 0px 8px 0px rgba(246,197,89,1);
-    -moz-box-shadow: 0px 0px 8px 0px rgba(246,197,89,1);
-    position: relative;
-    z-index: 500 !important;
-}
-
-.offerCards2 {
-    margin-left: -15px !important;
-     z-index: 1 !important;
-}
-
-.offerCards3 {
-    margin-left: -25px !important;
-     z-index: 1 !important;
-}
-
-.offerBlogHead {
-    font-family: mtavruli;
-    font-style: italic;
-    font-weight: 400;
-    font-size: 16px;
-    color: #000;
-    text-align: center;
-}
-
-.offerBlogImg {
-    width: 100%;
-    text-align: center;
-}
-
-.offerBlogHeadSecond {
-    font-family: mtavruli;
-    font-style: italic;
-    font-weight: 400;
-    font-size: 13px;
-    color: #000;
-    text-align: center;
-    margin-top: 33px;
-}
-
-.offerBlogParagraph {
-    font-family: mtavruli;
-    font-style: italic;
-    font-weight: 400;
-    font-size: 11px;
-    color: #000;
-    margin: 0;
-    margin-top: 22px;
-}
-
-.offerBlogBtn {
-    width: 100px;
-    height: 30px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 15px;
-    background-color: #FFC33E;
-    color: #fff;
-    font-family: mtavruli;
-    font-weight: 400;
-    font-style: italic;
-    font-size: 13px;
-    text-decoration: none;
-    margin-top: 29px;
-}
-
-.offerCardLink {
-    text-decoration: none !important;
-}
-
-
-
-/* Slider */
-
-
-.swiper {
-    width: 100%;
-    padding-top: 50px;
-    padding-bottom: 50px;
-}
-
-.swiper-slide {
-    background-position: center;
-    background-size: cover;
-    width: 300px;
-    height: 300px;
-    border-radius: 20px !important;
-}
-
-.swiper-slide img {
-    display: block;
-    width: 100%;
-    border-radius: 20px !important;
-}
-
-.swiper-slide {
-    transition: transform 0.3s; /* Add a smooth transition */
-}
-
-.custom-swiper-button-prev {
-    background-image: url('../img/svgArrow.svg');
-    background-size: contain;
-    width: 70px;
-    height: 70px;
-    position: absolute;
-    left: 0;
-    top: 40%;
-    z-index: 20;
-}
-
-.custom-swiper-button-next {
-    background-image: url('../img/svgArrow.svg');
-    background-size: contain;
-    width: 70px;
-    height: 70px;
-    transform: rotate(180deg);
-    position: absolute;
-    z-index: 20;
-    right: 0;
-    top: 40%;
-}
-
-
-
-/* სერვისების სექცია */
-
-
-.serviceHead {
-    font-family: mtavruli;
-    font-weight: 700;
-    font-style: italic;
-    font-size: 64px;
-    color: #181E4B;
-    text-align: center;
-    line-height: 71px;
-}
-
-.serviceCol {
-    padding: 0 !important;
+    columns: #000;
 }
 
 .serviceCard {
@@ -1012,138 +363,6 @@ input[type="radio"]:checked + .radio-custom::after {
 
 
 
-/* Blog Section */
-
-
-.blogHead {
-    font-family: mtavruli;
-    font-size: 64px;
-    font-weight: 800;
-    margin: 0;
-    text-align: center;
-    color: #000;
-}
-
-.blogParagraph {
-    font-family: mtavruli;
-    font-size: 20px;
-    font-weight: 400;
-    color: #000;
-    margin: 0;
-    text-align: center;
-    padding: 0 270px 0 270px;
-    margin-top: 70px;
-    margin-bottom: 73px;
-}
-
-.blogImgBox {
-    width: 100%;
-    height: 700px;
-    border-radius: 33px;
-    background-color: #D9D9D9;
-}
-
-.blogHeadleft {
-    font-family: mtavruli;
-    font-size: 36px;
-    font-style: italic;
-    font-weight: 700;
-    color: #000;
-    margin: 0;
-    margin-top: 44px;
-}
-
-.blogDate {
-    color: #000;
-    font-size: 20px;
-    font-weight: 300;
-    font-family: mtavruli;
-    margin: 0;
-    margin-top: 44px;
-}
-
-.blogParagraphInside {
-    font-family: mtavruli;
-    font-style: italic;
-    font-weight: 400;
-    font-size: 20px;
-    color: #000;
-    margin: 0;
-    margin-top: 30px;
-}
-
-.blogHeadRight {
-    font-family: mtavruli;
-    font-weight: 700;
-    font-style: italic;
-    font-size: 24px;
-    color: #000;
-    margin: 0;
-}
-
-.blogImgBoxes {
-    width: 300px;
-    height: 300px;
-    border-radius: 33px;
-    background-color: #D9D9D9;
-}
-
-.blogDateright {
-    color: #000;
-    font-size: 20px;
-    font-weight: 300;
-    font-family: mtavruli;
-    margin: 0;
-    margin-top: 74px;
-}
-
-
-
-/* რეიტინგის სექცია */ 
-
-
-
-.ratingHead {
-    color: #000;
-    margin: 0;
-    font-family: mtavruli;
-    font-style: italic;
-    font-weight: 700;
-    font-size: 64px;
-}
-
-.ratingBox {
-    background-color: #fff;
-    border-radius: 20px;
-}
-
-.ratingParagraph {
-    font-family: mtavruli;
-    font-weight: 400;
-    font-style: italic;
-    font-size: 24px;
-    color: #000;
-    margin: 0;
-}
-
-.ratingHeadInside {
-    font-family: mtavruli;
-    font-weight: 600;
-    font-style: italic;
-    font-size: 32px;
-    color: #000;
-    margin: 0;
-}
-
-.ratingParagraphInside {
-    font-family: mtavruli;
-    font-style: italic;
-    font-weight: 400;
-    font-size: 24;
-    color: #000;
-    margin: 0;
-}
-
 
 
 /* footer */
@@ -1223,131 +442,16 @@ input[type="radio"]:checked + .radio-custom::after {
         color: #fff !important;
         background-color: transparent !important;
     }
-    .citiesList {
-        width: 100%;
-        height: 339px;
-        background-color: #FFC33E;
-        border-radius: 20px;
-        overflow-y: scroll;
-        position: absolute;
-        right: 0;
-        top: -35px;
-        z-index: 5;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-        padding: 19px;
-        display: none;
-    }
-    .calendar {
-        margin: auto;
-        width: 100%;
-        height: 288px;
-        background-color: #FFC33E;
-        padding: 1rem;
-        border-radius: 10px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-        position: absolute;
-        right: 0;
-        top: 40px;
-        visibility: hidden;
-        font-family: mtavruli;
-        z-index: 200;
-    }
-    .passengerBox {
-        width: 100%;
-        height: 221px;
-        background-color: #FFC33E;
-        border-radius: 10px;
-        position: absolute;
-        top: 40px;
-        right: 0;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-        z-index: 10;
-        display: none;
-    }
-    .marginCol {
-        margin: 0;
-    }
-    .formBox {
-        height: 100%;
-    }
-    .whyMatare {
-        font-size: 29px;
-    }
-    .whyMatare span {
-        font-size: 33px;
-    }
-    .whyCol {
-        padding: 0 12px 0 12px !important;
-    }
-    .offerHead {
-        font-size: 34px;
-    }
-    .offerHeadsecond {
+
+    /* Hotels */
+
+    .mainHead {
         font-size: 18px;
-    }
-    .offerParagraph {
-        font-size: 16px;
-    }
-    .offerCards2 {
-        margin: 0 !important;
-    }
-    .offerCards3 {
-        margin: 0 !important;
-    }
-    .serviceHead {
-        font-size: 24px;
     }
     .serviceCard {
-        height: 100%;
+        height: 391px;
     }
-    .serviceHoverImg {
-        object-fit: cover !important;
-    }
-    .serviceCol {
-        padding: 12px 24px 12px 24px !important;
-    }
-    .blogHead {
-        font-size: 24px;
-    }
-    .blogParagraph {
-        padding: 0;
-    }
-    .blogImgBox {
-        height: 210px;
-    }
-    .blogHeadleft {
-        font-size: 24px;
-    }
-    .blogDate {
-        font-size: 14px;
-    }
-    .blogParagraphInside {
-        font-size: 16px;
-    }
-    .blogHeadRight {
-        font-size: 20px;
-    }
-    .blogImgBoxes {
-        height: 180px !important;
-        width: 200px !important;
-    }
-    .blogDateright {
-        margin-top: 15px;
-        font-size: 14px;
-    }
-    .ratingHead {
-        font-size: 24px;
-        text-align: center;
-    }
-    .ratingParagraph {
-        font-size: 19px;
-    }
-    .ratingHeadInside {
-        font-size: 24px;
-    }
-    .ratingParagraphInside {
-        font-size: 18px;
-    }
+
     .footerLists li > a {
         font-size: 13px;
     }
