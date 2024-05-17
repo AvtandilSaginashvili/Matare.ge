@@ -669,6 +669,7 @@ input[type="radio"]:checked + .radio-custom::after {
 
 .whyCol {
     padding: 0 !important;
+    height: 330px !important;
 }
 
 .cards {
@@ -949,6 +950,16 @@ input[type="radio"]:checked + .radio-custom::after {
 }
 
 .iconBox {
+    border-radius: 50%;
+    width: 58px;
+    height: 58px;
+    border: 5px solid #FFC33E;
+    position: absolute;
+    top: -31px;
+    left: 35%;
+}
+
+.iconBox2 {
     border-radius: 50%;
     width: 58px;
     height: 58px;
@@ -1243,11 +1254,11 @@ input[type="radio"]:checked + .radio-custom::after {
 }
 
 .backImgHead {
-    font-family: mtavruli;
+    font-family: mtavruliBold;
     font-weight: 900;
     font-size: 54px;
     color: #fff;
-    -webkit-text-stroke-width: 0.1px;
+    -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: #000;
     margin: 0;
     position: absolute;
@@ -1256,11 +1267,11 @@ input[type="radio"]:checked + .radio-custom::after {
 }
 
 .hotelsArrow {
-    font-family: mtavruli;
+    font-family: mtavruliBold;
     font-weight: 900;
     font-size: 48px;
     color: #fff;
-    -webkit-text-stroke-width: 0.1px;
+    -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: #000;
     margin: 0;
     position: absolute;
@@ -1269,22 +1280,22 @@ input[type="radio"]:checked + .radio-custom::after {
 }
 
 .hotelsArrow2 {
-    font-family: mtavruli;
+    font-family: mtavruliBold;
     font-weight: 900;
     font-size: 48px;
     color: #fff;
-    -webkit-text-stroke-width: 0.1px;
+    -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: #000;
     margin: 0;
     text-align: center;
 }
 
 .backImgHead2 {
-    font-family: mtavruli;
+    font-family: mtavruliBold;
     font-weight: 900;
     font-size: 34px;
     color: #fff;
-    -webkit-text-stroke-width: 0.1px;
+    -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: #000;
     margin: 0;
     text-align: center;
@@ -1446,7 +1457,7 @@ input[type="radio"]:checked + .radio-custom::after {
 }
 
 .tourCountriesCol2 {
-    margin-top: -20px !important;
+    margin-top: 20px !important;
 }
 
 
@@ -2589,6 +2600,15 @@ input[type="radio"]:checked + .radio-custom::after {
     .offerParagraph {
         font-size: 16px;
     }
+    .offerCards:hover {
+        transform: scale(1) !important;
+        cursor: pointer;
+        box-shadow: 0px 7px 14px 0px rgba(192,192,192,0.75);
+        -webkit-box-shadow: 0px 7px 14px 0px rgba(192,192,192,0.75);
+        -moz-box-shadow: 0px 7px 14px 0px rgba(192,192,192,0.75);
+        position: relative;
+        z-index: 500 !important;
+    }
     .offerCards2 {
         margin: 0 !important;
     }
@@ -2599,13 +2619,18 @@ input[type="radio"]:checked + .radio-custom::after {
         font-size: 24px;
     }
     .serviceCard {
-        height: 85% !important;
+        height: 391px !important;
+    }
+    .serviceBoxHover {
+        bottom: 20px !important;
     }
     .serviceCard:hover .serviceBoxHover {
         left: 0;
         bottom: 0;
     }
-
+    .iconBox {
+        left: 40% !important;
+    }
     .serviceCard:hover .serviceBoxHover .serviceParagraph {
         visibility: visible;
         transition-timing-function: linear;
@@ -2624,7 +2649,7 @@ input[type="radio"]:checked + .radio-custom::after {
         text-align: center;
     }
     .serviceHoverImg {
-        height: 125px !important;
+        height: 80%;
         object-fit: cover !important;
     }
     .serviceCol {
@@ -2700,8 +2725,8 @@ input[type="radio"]:checked + .radio-custom::after {
     .mainHead {
         font-size: 18px;
     }
-    .serviceCard {
-        height: 391px;
+    .hotelsArrow2 {
+        font-size: 22px;
     }
 
 
@@ -2824,6 +2849,14 @@ input[type="radio"]:checked + .radio-custom::after {
     }
     .ticketFGeorgiaParagraph {
         font-size: 20px;
+    }
+
+    .ticketListLink:hover .ticketListBox {
+        background-color: #fff;
+    }
+    
+    .ticketListLink:hover .ticketListImg {
+       transform: scale(1);
     }
 
 
@@ -2982,12 +3015,62 @@ input[type="radio"]:checked + .radio-custom::after {
 /* Tablet Media Queer */
 
 
-@media screen and (min-width: 768px) and (max-width: 1024px) {          
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    .citiesList {
+        width: 100%;
+        height: 339px;
+        background-color: #FFC33E;
+        border-radius: 20px;
+        overflow-y: scroll;
+        position: absolute;
+        right: 0;
+        top: -35px;
+        z-index: 5;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        padding: 19px;
+        display: none;
+    }
+    .calendar {
+        margin: auto;
+        width: 100%;
+        height: 288px;
+        background-color: #FFC33E;
+        padding: 1rem;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        position: absolute;
+        right: 0;
+        top: 40px;
+        visibility: hidden;
+        font-family: mtavruli;
+        z-index: 200;
+    }
+    .passengerBox {
+        width: 100%;
+        height: 221px;
+        background-color: #FFC33E;
+        border-radius: 10px;
+        position: absolute;
+        top: 40px;
+        right: 0;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        z-index: 10;
+        display: none;
+    }
+    .serviceCol {
+        height: 500px !important;
+    }
+    .serviceCard {
+        height: 100% !important;
+    }          
     .serviceHoverImg {
-        height: 275px !important;
+        object-fit: cover !important;
     }
     .servCardHeadBox h6 {
         font-size: 16px !important;
+    }
+    .iconBox {
+        left: 45% !important;
     }
 
 
@@ -3067,6 +3150,63 @@ input[type="radio"]:checked + .radio-custom::after {
     .noFoundBtns2:hover .noFoundBtnCalling2 {
         opacity: 0;
     }
+
+
+    /* Offers section Css */
+
+    .offerCards:hover {
+        transform: scale(1) !important;
+        cursor: pointer;
+        box-shadow: 0px 7px 14px 0px rgba(192,192,192,0.75) !important;
+        -webkit-box-shadow: 0px 7px 14px 0px rgba(192,192,192,0.75) !important;
+        -moz-box-shadow: 0px 7px 14px 0px rgba(192,192,192,0.75) !important;
+        position: relative;
+        z-index: 500 !important;
+    }
+
+
+    /* Tours Page */
+
+    .tourCountriesCol2 {
+        margin-top: 48px !important;
+    }
+    .hotelsArrow2 {
+        font-size: 22px;
+    }
+    .toursCardHover {
+        width: 100%;
+        height: 66px;
+    }
+    .toursCardHover span {
+        opacity: 1;
+    }
+    .toursCard {
+        background-color: #FFC33E;
+    }
+    .tourImg {
+        transform: scale(1.08);
+    }
+
+    /* Contacts Page */
+
+    .contactBox {
+        margin-top: -40px !important;
+        padding: 32px;
+        background-color: #FFC33E;
+    }
+    .contactInsideBox {
+        background-color: transparent !important;
+    }
+
+    /* Tickets Page */
+
+    .ticketListLink:hover .ticketListBox {
+        background-color: #fff;
+    }
+    
+    .ticketListLink:hover .ticketListImg {
+       transform: scale(1);
+    }
 }
 
 
@@ -3074,11 +3214,86 @@ input[type="radio"]:checked + .radio-custom::after {
 
 @media screen and (min-width: 800px) and (max-width: 1200px) {
 
+    .citiesList {
+        width: 100%;
+        height: 339px;
+        background-color: #FFC33E;
+        border-radius: 20px;
+        overflow-y: scroll;
+        position: absolute;
+        right: 0;
+        top: -35px;
+        z-index: 5;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        padding: 19px;
+        display: none;
+    }
+    .calendar {
+        margin: auto;
+        width: 100%;
+        height: 288px;
+        background-color: #FFC33E;
+        padding: 1rem;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        position: absolute;
+        right: 0;
+        top: 40px;
+        visibility: hidden;
+        font-family: mtavruli;
+        z-index: 200;
+    }
+    .passengerBox {
+        width: 100%;
+        height: 221px;
+        background-color: #FFC33E;
+        border-radius: 10px;
+        position: absolute;
+        top: 40px;
+        right: 0;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        z-index: 10;
+        display: none;
+    }
+
     /* Career Page Css */
 
 
     .careerMainBox {
         margin-top: 0;
+    }
+    .serviceHoverImg {
+        height: 80% !important;
+        object-fit: cover !important;
+    }
+    .serviceCol {
+        height: 500px !important;
+    }
+    .serviceCard {
+        height: 100% !important;
+        padding-left: 68px;
+        padding-right: 68px;
+    }          
+    .servCardHeadBox h6 {
+        font-size: 14px !important;
+        text-align: center !important;
+        line-height: 12px !important;
+    }
+    .iconBox {
+        left: 45% !important;
+        bottom: 30px !important;
+    }
+    .serviceCard:hover .serviceBoxHover {
+        left: 0;
+        bottom: 0;
+    }
+    .serviceCard:hover .serviceBoxHover .serviceParagraph {
+        visibility: visible;
+        transition-timing-function: linear;
+    }
+    .serviceCard:hover .serviceBoxHover .serviceParagraph2 {
+        visibility: hidden;
+        transition-timing-function: linear;
     }
 
 
@@ -3156,6 +3371,50 @@ input[type="radio"]:checked + .radio-custom::after {
     .noFoundBtns2:hover .noFoundBtnCalling2 {
         opacity: 0;
     }
+
+    /* Offers Section */
+
+    .offerCards:hover {
+        transform: scale(1) !important;
+        cursor: pointer;
+        box-shadow: 0px 7px 14px 0px rgba(192,192,192,0.75) !important;
+        -webkit-box-shadow: 0px 7px 14px 0px rgba(192,192,192,0.75) !important;
+        -moz-box-shadow: 0px 7px 14px 0px rgba(192,192,192,0.75) !important;
+        position: relative;
+        z-index: 500 !important;
+    }
+
+        /* Tours Page */
+
+        .tourCountriesCol2 {
+            margin-top: 48px !important;
+        }
+        .hotelsArrow2 {
+            font-size: 22px;
+        }
+        .toursCardHover {
+            width: 100%;
+            height: 66px;
+        }
+        .toursCardHover span {
+            opacity: 1;
+        }
+        .toursCard {
+            background-color: #FFC33E;
+        }
+        .tourImg {
+            transform: scale(1.08);
+        }
+
+            /* Tickets Page */
+
+    .ticketListLink:hover .ticketListBox {
+        background-color: #fff;
+    }
+    
+    .ticketListLink:hover .ticketListImg {
+       transform: scale(1);
+    }
 }
 
 
@@ -3166,7 +3425,47 @@ input[type="radio"]:checked + .radio-custom::after {
     .links {
         font-size: 14px !important;
     }
-
+    .citiesList {
+        width: 100%;
+        height: 339px;
+        background-color: #FFC33E;
+        border-radius: 20px;
+        overflow-y: scroll !important;
+        position: absolute !important;
+        right: 0 !important;
+        top: -35px !important;
+        z-index: 5 !important;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        padding: 19px !important;
+        display: none;
+    }
+    .calendar {
+        margin: auto;
+        width: 100%;
+        height: 288px;
+        background-color: #FFC33E;
+        padding: 1rem;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        position: absolute;
+        right: 0;
+        top: 40px;
+        visibility: hidden;
+        font-family: mtavruli;
+        z-index: 200;
+    }
+    .passengerBox {
+        width: 100%;
+        height: 221px;
+        background-color: #FFC33E;
+        border-radius: 10px;
+        position: absolute;
+        top: 40px;
+        right: 0;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        z-index: 10;
+        display: none;
+    }
 
     /* Career Page */
 
@@ -3222,6 +3521,35 @@ input[type="radio"]:checked + .radio-custom::after {
     }
 
 
+    /* Service Page */
+
+
+    .serviceCol {
+        height: 310px !important;
+    }
+    .serviceCard {
+        height: 100% !important;
+        padding: 0 !important;
+    } 
+    .serviceCard:hover .serviceBoxHover {
+        left: 0;
+        bottom: 0;
+    }
+    .iconBox {
+        left: 35% !important;
+    }
+    .serviceCardHeadBox h6 {
+        font-size: 14px !important;
+    }
+    .serviceCard:hover .serviceBoxHover .serviceParagraph {
+        visibility: visible;
+        transition-timing-function: linear;
+    }
+    .serviceCard:hover .serviceBoxHover .serviceParagraph2 {
+        visibility: hidden;
+        transition-timing-function: linear;
+    }
+
         /* FAQ Page */
 
 
@@ -3272,5 +3600,52 @@ input[type="radio"]:checked + .radio-custom::after {
     }
     .contactParagraph2 {
         font-size: 16px;
+    }
+
+    /* Offers Section */
+
+    .offerCards:hover {
+        transform: scale(1) !important;
+        cursor: pointer;
+        box-shadow: 0px 7px 14px 0px rgba(192,192,192,0.75) !important;
+        -webkit-box-shadow: 0px 7px 14px 0px rgba(192,192,192,0.75) !important;
+        -moz-box-shadow: 0px 7px 14px 0px rgba(192,192,192,0.75) !important;
+        position: relative;
+        z-index: 500 !important;
+    }
+
+        /* Tours Page */
+
+        .tourCountriesCol2 {
+            margin-top: 48px !important;
+        }
+        .iconBox2 {
+            left: 43% !important;
+        }
+        .hotelsArrow2 {
+            font-size: 22px;
+        }
+        .toursCardHover {
+            width: 100%;
+            height: 66px;
+        }
+        .toursCardHover span {
+            opacity: 1;
+        }
+        .toursCard {
+            background-color: #FFC33E;
+        }
+        .tourImg {
+            transform: scale(1.08);
+        }
+
+            /* Tickets Page */
+
+    .ticketListLink:hover .ticketListBox {
+        background-color: #fff;
+    }
+    
+    .ticketListLink:hover .ticketListImg {
+       transform: scale(1);
     }
 }
