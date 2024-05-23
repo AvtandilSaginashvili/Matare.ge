@@ -15,7 +15,6 @@ function updateClock() {
   setInterval(updateClock, 1000);
   updateClock();
 
-
 // ცალმხრივი მონიშვნის სექცია
 
 let unilateral = document.getElementById("unilateral");
@@ -130,9 +129,9 @@ cities.forEach(city => {
 });
 
   let planeImg2 = document.createElement("img");
-  planeImg2.src = "../Asset/img/Airplane Take Off.svg";
+  planeImg2.src = "../Asset/img/Airplanedown.svg";
   planeImg2.alt = "plane";
-  planeImg2.classList.add("planesvg");
+  planeImg2.classList.add("planesvg2");
 
   planeBox2.appendChild(listParagraph2);
   planeBox2.appendChild(planeImg2);
@@ -309,7 +308,7 @@ toggleButton2.addEventListener('click', function() {
 
 // counter section //
 
-let counter = 0;
+let counter = 1;
 let counterKid = 0;
 let counterBaby = 0;
 
@@ -359,7 +358,7 @@ function updateCounterBaby() {
 }
 
 minusBtn.addEventListener("click", () => {
-    if (counter > 0) {
+    if (counter > 1) {
         counter--;
         updateCounter();
     }
@@ -393,3 +392,31 @@ plusBtnBaby.addEventListener("click", () => {
     counterBaby++;
     updateCounterBaby();
 });
+
+updateCounter();
+updateCounterKid();
+updateCounterBaby();
+
+
+// Career Vacancy //
+
+
+function showHideElement(id) {
+
+    let vacancyDetailsBox = document.getElementById(id);
+
+
+    if (vacancyDetailsBox) {
+        vacancyDetailsBox.style.display = "block";
+    }
+}
+
+function closeBox(id) {
+
+    let vacancyDetailsBox = document.getElementById(id);
+
+    if (vacancyDetailsBox) {
+        vacancyDetailsBox.style.display = "none";
+    }
+}
+

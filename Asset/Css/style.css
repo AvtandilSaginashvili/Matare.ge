@@ -95,7 +95,6 @@ body {
 .links {
     font-family: mtavruli;
     font-weight: 400 !important;
-    font-style: italic;
     font-size: 20px !important;
     color: #000 !important;
     transition: 0.5s !important;
@@ -104,12 +103,12 @@ body {
 .dropLink {
     font-family: mtavruli;
     font-weight: 400 !important;
-    font-style: italic;
     font-size: 20px !important;
     color: #000 !important;
     padding: 0 !important;
     padding-right: 5px !important;
     margin: 0 !important;
+    margin-left: 20px !important;
 }
 
 .dropLink:hover {
@@ -134,6 +133,7 @@ body {
     border-radius: 10px;
     color: #fff;
     padding: 3px;
+    text-decoration: none;
 }
 
 .hrLink {
@@ -158,8 +158,8 @@ body {
 .closeButton {
     border: none;
     background-color: transparent;
-    width: 50px;
-    height: 50px;
+    width: 60px;
+    height: 60px;
 }
 
 .offcanvasBody {
@@ -167,6 +167,11 @@ body {
     background-image: url(../img/offcanvas\ background.png);
     background-repeat: no-repeat;
     background-size: cover;
+}
+
+.socBox {
+    position: relative;
+    z-index: 30;
 }
 
 
@@ -188,6 +193,8 @@ body {
     z-index: -50;
     top: 0;
     left: 0;
+    padding-left: 24px !important;
+    padding-right: 24px !important;
 }
 
 .marginCol {
@@ -237,19 +244,19 @@ input[type="radio"]:checked + .radio-custom::after {
     height: 12px;
     border-radius: 50%;
     background-color: #FFC33E;
-  }
+}
   
 
-  .formDestination label{
+.formDestination label{
     color: #666666;
     font-family: mtavruli;
     font-style: italic;
     font-weight: 400;
     font-size: 22px;
 
-  }
+}
 
-  .chooseCity {
+.chooseCity {
     height: 40px;
     width: 100%;
     background-color: transparent;
@@ -324,6 +331,7 @@ input[type="radio"]:checked + .radio-custom::after {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: relative;
 }
 
 .listParagraph {
@@ -336,6 +344,15 @@ input[type="radio"]:checked + .radio-custom::after {
 
 .planesvg {
     transition: 0.5s;
+}
+
+.planesvg2 {
+    transition: 0.5s;
+    width: 50px !important;
+    height: 50px !important;
+    position: absolute;
+    top: -10px;
+    right: 0;
 }
 
 .chooseDate {
@@ -647,6 +664,18 @@ input[type="radio"]:checked + .radio-custom::after {
 
 
 
+/* Sponsor Slide */
+
+.sponsorSlideMobile {
+    transform: scale(1.1) !important;
+}
+
+.sliderRows {
+    height: 45px !important;
+}
+
+
+
 
 /* რატომ MATARE.ge */
 
@@ -669,11 +698,11 @@ input[type="radio"]:checked + .radio-custom::after {
 
 .whyCol {
     padding: 0 !important;
-    height: 330px !important;
+    height: 370px !important;
 }
 
 .cards {
-    height: 310px !important;
+    height: 100% !important;
     border-radius: 10px;
     background-color: #F9F9F9;
     padding: 15px;
@@ -696,7 +725,6 @@ input[type="radio"]:checked + .radio-custom::after {
     font-size: 16.4px;
     color: #1E1D4C;
     margin: 0;
-    align-items: center;
 }
 
 .cardParagraph {
@@ -815,7 +843,7 @@ input[type="radio"]:checked + .radio-custom::after {
     font-weight: 400;
     font-size: 11px;
     color: #000;
-    margin: 0;
+    margin: 0 ;
     margin-top: 22px;
 }
 
@@ -842,7 +870,7 @@ input[type="radio"]:checked + .radio-custom::after {
 
 
 
-/* Slider */
+/* Swiper Slider */
 
 
 .swiper {
@@ -866,14 +894,15 @@ input[type="radio"]:checked + .radio-custom::after {
 }
 
 .swiper-slide {
-    transition: transform 0.3s; /* Add a smooth transition */
+    transition: transform 0.3s;
 }
 
 .custom-swiper-button-prev {
-    background-image: url('../img/svgArrow.svg');
+    background-image: url('../img/nextarrowyellow.svg');
     background-size: contain;
     width: 70px;
     height: 70px;
+    transform: rotate(180deg);
     position: absolute;
     left: 0;
     top: 40%;
@@ -881,11 +910,10 @@ input[type="radio"]:checked + .radio-custom::after {
 }
 
 .custom-swiper-button-next {
-    background-image: url('../img/svgArrow.svg');
+    background-image: url('../img/nextarrowyellow.svg');
     background-size: contain;
     width: 70px;
     height: 70px;
-    transform: rotate(180deg);
     position: absolute;
     z-index: 20;
     right: 0;
@@ -956,7 +984,7 @@ input[type="radio"]:checked + .radio-custom::after {
     border: 5px solid #FFC33E;
     position: absolute;
     top: -31px;
-    left: 35%;
+    left: 40%;
 }
 
 .iconBox2 {
@@ -1313,6 +1341,10 @@ input[type="radio"]:checked + .radio-custom::after {
     text-align: center;
 }
 
+.hotelsIcon {
+    height: 100% !important;
+}
+
 
 
 /* Text Content */
@@ -1416,6 +1448,7 @@ input[type="radio"]:checked + .radio-custom::after {
 .tourCountriesRow {
     border-radius: 40px;
     padding: 36px;
+    padding-top: 0;
     padding-bottom: 55px;
     background-color: #FAFAFA;
     position: relative;
@@ -1443,7 +1476,6 @@ input[type="radio"]:checked + .radio-custom::after {
     color: #000;
     margin: 0;
     text-align: center;
-    margin-bottom: 41px;
 }
 
 .tourCountriesParagraph {
@@ -1836,20 +1868,6 @@ input[type="radio"]:checked + .radio-custom::after {
     margin-top: 43px;
 }
 
-.contactBottomBtns {
-    width: 100%;
-    height: 70px;
-    background-color: #4C9EFF;
-    border: none;
-    outline: none;
-    border-radius: 18px;
-    color: #fff;
-    font-family: bree serif;
-    font-weight: 600;
-    font-size: 46px;
-    transition: 0.5s linear;
-}
-
 .contactBottomBtns2 {
     width: 100%;
     height: 70px;
@@ -1867,10 +1885,6 @@ input[type="radio"]:checked + .radio-custom::after {
     justify-content: space-between;
     padding: 0 15px 0 15px;
     transition: 0.5s linear;
-}
-
-.contactBottomBtns:hover {
-    background-color: #FFC33E;
 }
 
 .contactBottomBtns2:hover {
@@ -2065,6 +2079,78 @@ input[type="radio"]:checked + .radio-custom::after {
     border-radius: 61px;
     background-color: #306587;
     padding: 25px;
+}
+
+.careerBtns {
+    background-color: transparent;
+    border: none;
+    outline: none;
+}
+
+.vacancyBox {
+    display: none;
+}
+
+.vacancyDetailsBox {
+    width: 100%;
+    height: 100vh;
+    background-color: #000000ab;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.vacancyDetails {
+    width: 50%;
+    height: 60vh;
+    background-color: #fff;
+    border-radius: 28px;
+    padding: 25px;
+    overflow: scroll;
+    position: relative;
+}
+
+.closeBlackBtn {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    background-color: transparent;
+    border: none;
+}
+
+.vacancyDetails::-webkit-scrollbar {
+    display: none;
+}
+
+.vacancyDetails h3 {
+    font-family: mtavruli;
+    font-weight: 700;
+    font-size: 29px;
+    color: #000;
+    margin: 0;
+    text-align: center;
+}
+
+.vacancyDetails p {
+    font-family: mtavruli;
+    font-weight: 400;
+    font-size: 21px;
+    color: #000;
+    margin: 0;
+    margin-top: 20px;
+    line-height: 24px;
+}
+
+.resume {
+    font-family: mtavruli;
+    font-size: 24px;
+    font-weight: 500;
+    color: #000;
+    margin: 0;
+    margin-top: 40px;
 }
 
 .careerHead {
@@ -2515,6 +2601,9 @@ input[type="radio"]:checked + .radio-custom::after {
 
 @media screen and (max-width: 768px) {
     
+    .bannerImg {
+        height: 70px !important;
+    }
     .links {
         color: #fff !important;
     }
@@ -2582,6 +2671,11 @@ input[type="radio"]:checked + .radio-custom::after {
     .formBox {
         height: 100%;
     }
+    .sliderContainer {
+        height: 130px !important;
+        display: flex;
+        align-items: center;
+    }
     .whyMatare {
         font-size: 29px;
     }
@@ -2590,6 +2684,7 @@ input[type="radio"]:checked + .radio-custom::after {
     }
     .whyCol {
         padding: 0 12px 0 12px !important;
+        height: auto !important;
     }
     .offerHead {
         font-size: 34px;
@@ -2664,6 +2759,8 @@ input[type="radio"]:checked + .radio-custom::after {
     }
     .blogParagraph {
         padding: 0;
+        margin: 0;
+        margin-bottom: 24px;
     }
     .blogImgBox {
         height: 210px;
@@ -2683,6 +2780,10 @@ input[type="radio"]:checked + .radio-custom::after {
     .blogImgBoxes {
         height: 180px !important;
         width: 200px !important;
+    }
+    .blogImgBoxes2 {
+        height: 180px !important;
+        margin-top: 0 !important;
     }
     .blogDateright {
         margin-top: 15px;
@@ -2728,22 +2829,29 @@ input[type="radio"]:checked + .radio-custom::after {
     .hotelsArrow2 {
         font-size: 22px;
     }
+    .hotelsIcon {
+        height: 50% !important;
+    }
 
 
     /* Tour Page */
     
     .toursCardHover {
         width: 100%;
-        height: 66px;
+        height: 26px;
     }
     .toursCardHover span {
         opacity: 1;
+        font-size: 18px;
     }
     .toursCard {
         background-color: #FFC33E;
     }
     .tourImg {
-        transform: scale(1.08);
+        transform: scale(1.5);
+        border-radius: 0;
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
     }
 
 
@@ -2812,6 +2920,19 @@ input[type="radio"]:checked + .radio-custom::after {
     }
     .contactInsideBox2 {
         padding: 20px 0 20px 0;
+        border-radius: 0;
+    }
+    .contactInsideHead {
+        font-size: 16px;
+    }
+    .contactParagraph2 {
+        font-size: 13px;
+    }
+    .contactParagraph {
+        font-size: 10px;
+    }
+    .contactCallBtn {
+        font-size: 14px;
     }
     .bankBox {
         margin-top: 48px !important;
@@ -2843,7 +2964,12 @@ input[type="radio"]:checked + .radio-custom::after {
 
     /* ticket from Georgia page */
 
-
+    .ticketListBox {
+        border-radius: 14px;
+    }
+    .ticketListImg {
+        border-radius: 14px;
+    }
     .ticketFGeorgiaHead {
         font-size: 28px;
     }
@@ -2911,6 +3037,34 @@ input[type="radio"]:checked + .radio-custom::after {
     .careerParagraph {
         font-size: 18px;
     }
+    .vacancyDetails {
+        width: 75%;
+        height: 500px;
+    }
+    
+    .closeBlackBtn {
+        position: absolute;
+        right: 10px;
+        top: 10px;
+    }
+    
+    .vacancyDetails::-webkit-scrollbar {
+        display: none;
+    }
+    
+    .vacancyDetails h3 {
+        font-size: 17px;
+        margin-top: 20px;
+    }
+    
+    .vacancyDetails p {
+        font-size: 14px;
+        line-height: 20px;
+    }
+    
+    .resume {
+        font-size: 13px !important;
+    }
 
 
     /* No Found Page Css */
@@ -2970,6 +3124,7 @@ input[type="radio"]:checked + .radio-custom::after {
 
     /* About Page Css */
 
+    
 
     .noFoundBtnCalling2 {
         opacity: 0;
@@ -3071,6 +3226,16 @@ input[type="radio"]:checked + .radio-custom::after {
     }
     .iconBox {
         left: 45% !important;
+    }
+
+    /* Sponsor Slider Mobile */
+
+    .sponsorSlideMobile {
+        transform: scale(1.05) !important;
+    }
+    
+    .sliderRows {
+        height: 103px !important;
     }
 
 
@@ -3197,6 +3362,19 @@ input[type="radio"]:checked + .radio-custom::after {
     .contactInsideBox {
         background-color: transparent !important;
     }
+    .contactInsideBox2 {
+        padding: 20px 0 20px 0;
+        border-radius: 22px;
+    }
+    .contactInsideHead {
+        font-size: 16px;
+    }
+    .contactParagraph2 {
+        font-size: 13px;
+    }
+    .contactCallBtn {
+        font-size: 16px;
+    }
 
     /* Tickets Page */
 
@@ -3256,6 +3434,19 @@ input[type="radio"]:checked + .radio-custom::after {
         display: none;
     }
 
+
+    /* Spomsor Slider Mobile */
+
+    .sponsorSlideMobile {
+        transform: scale(1.05) !important;
+    }
+    
+    .sliderRows {
+        height: 117px !important;
+    }
+
+
+
     /* Career Page Css */
 
 
@@ -3294,6 +3485,34 @@ input[type="radio"]:checked + .radio-custom::after {
     .serviceCard:hover .serviceBoxHover .serviceParagraph2 {
         visibility: hidden;
         transition-timing-function: linear;
+    }
+
+    .vacancyDetails {
+        width: 70%;
+        height: 500px;
+    }
+    
+    .closeBlackBtn {
+        position: absolute;
+        right: 10px;
+        top: 10px;
+    }
+    
+    .vacancyDetails::-webkit-scrollbar {
+        display: none;
+    }
+    
+    .vacancyDetails h3 {
+        font-size: 19px;
+    }
+    
+    .vacancyDetails p {
+        font-size: 16px;
+        line-height: 20px;
+    }
+    
+    .resume {
+        font-size: 18px;
     }
 
 
@@ -3466,6 +3685,19 @@ input[type="radio"]:checked + .radio-custom::after {
         z-index: 10;
         display: none;
     }
+
+
+        /* Spomsor Slider Mobile */
+
+        .sponsorSlideMobile {
+            transform: scale(1.05) !important;
+        }
+        
+        .sliderRows {
+            height: 150px !important;
+        }
+
+
 
     /* Career Page */
 
