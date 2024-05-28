@@ -158,7 +158,6 @@ function chooseCity2() {
 }
 
 
-// Calendar 
 const header = document.querySelector('.calendar h3');
 const dates = document.querySelector('.dates');
 const navs = document.querySelectorAll('#prev, #next');
@@ -199,20 +198,29 @@ function renderCalendar() {
 
     for (let i = startAdjusted; i > 0; i--) {
         const prevMonthDay = endDatePrev - i + 1;
-        datesHtml += `<li class="inactive number prevMonth">${prevMonthDay}</li>`;
+        datesHtml += `<li class="inactive">${prevMonthDay}</li>`;
     }
 
     for (let i = 1; i <= endDate; i++) {
-        let className =
+        const dateToCheck = new Date(year, month, i);
+        let className = "number";
+
+        if (dateToCheck < new Date(new Date().setHours(0, 0, 0, 0))) {
+            className += " past";
+        } else if (
             i === selectedDate.getDate() &&
             month === selectedDate.getMonth() &&
-            year === selectedDate.getFullYear() ? ' class="today number"' : ' class="number"';
-        datesHtml += `<li${className}>${i}</li>`;
+            year === selectedDate.getFullYear()
+        ) {
+            className += " today";
+        }
+
+        datesHtml += `<li class="${className}">${i}</li>`;
     }
 
     for (let i = end; i < 7; i++) {
         const nextMonthDay = i - end + 1;
-        datesHtml += `<li class="inactive number nextMonth">${nextMonthDay}</li>`;
+        datesHtml += `<li class="number nextMonth">${nextMonthDay}</li>`;
     }
 
     dates.innerHTML = datesHtml;
@@ -227,40 +235,51 @@ function attachDateClickListeners() {
     dateOfNumber.forEach((item) => {
         item.addEventListener('click', (e) => {
             const clickedDay = parseInt(e.target.textContent);
-            if (e.target.classList.contains('prevMonth')) {
-                month--;
-                if (month < 0) {
-                    month = 11;
-                    year--;
+            const dateToCheck = new Date(year, month, clickedDay);
+
+            if (dateToCheck < new Date(new Date().setHours(0, 0, 0, 0))) {
+                window.alert("Please indicate today's or the next days.");
+            } else {
+                if (e.target.classList.contains('prevMonth')) {
+                    window.alert("Please indicate today's or the next days.");
+                } else if (e.target.classList.contains('nextMonth')) {
+                    month++;
+                    if (month > 11) {
+                        month = 0;
+                        year++;
+                    }
+                    selectedDate = new Date(year, month, clickedDay);
+                } else {
+                    selectedDate = new Date(year, month, clickedDay);
                 }
-            } else if (e.target.classList.contains('nextMonth')) {
-                month++;
-                if (month > 11) {
-                    month = 0;
-                    year++;
-                }
+                renderCalendar();
+                console.log(selectedDate.toLocaleDateString());
+                activeButton.textContent = selectedDate.toLocaleDateString();
+                toggleCalendar();
             }
-            selectedDate = new Date(year, month, clickedDay);
-            renderCalendar();
-            console.log(selectedDate.toLocaleDateString());
-            activeButton.textContent = selectedDate.toLocaleDateString();
-            toggleCalendar();
         });
     });
 }
 
 navs.forEach((nav) => {
     nav.addEventListener("click", (e) => {
+        e.preventDefault(); // Prevent the default action
+
         const btnId = e.target.id;
 
-        if (btnId === "prev" && month === 0) {
-            year--;
-            month = 11;
-        } else if (btnId === "next" && month === 11) {
-            year++;
-            month = 0;
-        } else {
-            month = btnId === "next" ? month + 1 : month - 1;
+        if (btnId === "prev") {
+            if (month === 0) {
+                year--;
+                month = 11;
+            } else {
+                month--;
+            }
+        } else if (btnId === "next") {
+            month++;
+            if (month > 11) {
+                month = 0;
+                year++;
+            }
         }
 
         renderCalendar();
@@ -291,8 +310,6 @@ function toggleCalendar() {
     }
 }
 
-
-
 toggleButton.addEventListener('click', function() {
     activeButton = toggleButton;
     toggleCalendar();
@@ -302,8 +319,6 @@ toggleButton2.addEventListener('click', function() {
     activeButton = toggleButton2;
     toggleCalendar();
 });
-
-
 
 
 
